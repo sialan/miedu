@@ -1,0 +1,12 @@
+Django==1.5
+MySQL-python==1.2.4
+PIL==1.1.7
+South==0.7.6
+distribute==0.6.28
+django-grappelli==2.4.4
+django-model-utils==1.2.0
+django-notifications-hq==0.6.0
+django-storages==1.1.6
+django-taggit==0.9.3
+gunicorn==0.17.2
+wsgiref==0.1.2

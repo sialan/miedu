@@ -1,0 +1,272 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div class="hero" id="highlighted">
+  <div class="inner"> 
+    
+    <!--Flexslider Showshow-->
+    <section class="flexslider-wrapper container">
+      <div class="flexslider" data-slidernav="auto" data-transition="slide"> 
+        <!--The Slides-->
+        <div class="slides"> 
+          
+          <!--Slide #1 with caption-->
+          <div class="slide row-fluid">
+            <img src="../static/img/slides/slide2.png" alt="Slide 1" />
+          </div>
+          <div class="slide row-fluid">
+            <div class="span7 youtube-container">
+              <iframe src="http://www.youtube.com/embed/SpAbBHwC930" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="span5 caption">
+              <h2>Pursue Your Dreams</h2>
+              <h4>New country. <a href="#">New Opportunities.</a></h4>
+              <p>Fund your Canadian Education.</p>
+              <a href="#" class="btn btn-large btn-primary">Sign Up!</a> </div>
+          </div>
+          <!--Slide #2 straight image 1170px wide x 390px high-->
+          <div class="slide row-fluid">
+            <div class="span7">
+              <img src="../static/img/slides/slide3.jpg" alt="Slide 2" />
+            </div>
+            <div class="span5 caption">
+              <h2>We'll Fund You!</h2>
+              <h4>New country. <a href="#">New Opportunities.</a></h4>
+              <p>Fund your Canadian Education.</p>
+              <a href="#" class="btn btn-large btn-primary">Sign Up!</a> </div>
+        </div>
+          
+          <!--Slide #3 & so on below--> 
+          
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="content">
+  <div class="container"> 
+    <!-- Services -->
+    <div class="block features">
+      <h2 class="title-divider"><span>How <span class="de-em">it works</span></span> <small>Invest in yourself.</small></h2>
+      <ul class="thumbnails">
+        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-1.png" alt="Feature 1" /></a>
+          <h3 class="title"><a href="features.html">Learn <span class="de-em">New Skills</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-2.png" alt="Feature 2" /></a>
+          <h3 class="title"><a href="features.html">Language & Cultural <span class="de-em">Training</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-3.png" alt="Feature 3" /></a>
+          <h3 class="title"><a href="features.html">Crowdfund <span class="de-em">Your Education</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-4.png" alt="Feature 4" /></a>
+          <h3 class="title"><a href="features.html">Find <span class="de-em">Meaningful Employment</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+      </ul>
+    </div>
+    
+    <!--Row 1-->
+    <div class="row-fluid">
+      <div class="span12"> 
+        <!--buttons-->
+        <h3 class="title-divider"><span>Featured Campaigns</span></h3>
+        <div class="row-fluid pricing-stack">
+
+          {% if featured_campaign_list %}
+          {% for campaign in featured_campaign_list %}
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>title here</h6>
+                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+                </li>
+                <li>
+                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 40%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$20000</span>
+                <span class="pull-right"><em>Days Left: </em>71</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$2000</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>71</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          {% endfor %}
+          {% else %}
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>title here</h6>
+                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+                </li>
+                <li>
+                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 40%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$20000</span>
+                <span class="pull-right"><em>Days Left: </em>71</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$2000</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>71</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>title here</h6>
+                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+                </li>
+                <li>
+                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 40%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$20000</span>
+                <span class="pull-right"><em>Days Left: </em>71</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$2000</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>71</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>title here</h6>
+                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+                </li>
+                <li>
+                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 40%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$20000</span>
+                <span class="pull-right"><em>Days Left: </em>71</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$2000</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>71</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>title here</h6>
+                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+                </li>
+                <li>
+                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 40%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$20000</span>
+                <span class="pull-right"><em>Days Left: </em>71</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$2000</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>71</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+    
+    <!--Row 1--> 
+    <div class="row-fluid"> 
+      <!-- Plan features -->
+      <div class="well well-mini pull-center">
+        <h4 class="inline-el pad-right"><span>Browse Immigrants: </span></h4>
+        <a href="immigrants.html" class="btn btn-primary signup">View All</a>
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}

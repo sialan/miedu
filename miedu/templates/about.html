@@ -1,0 +1,74 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container" id="about">
+    <div class="row"> 
+      <!-- sidebar -->
+      <div class="span3 sidebar">
+        <div class="section-menu">
+          <ul class="nav nav-list">
+            <li class="nav-header">In This Section</li>
+            <li class="active"><a href="about.html" class="first">About Us <small>How It All Began</small><i class="icon-angle-right"></i></a></li>
+            <li><a href="team.html">The Team <small>Our team of stars</small><i class="icon-angle-right"></i></a></li>
+            <li><a href="contact.html">Contact Us<small>How to get in touch</small><i class="icon-angle-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!--main content-->
+      <div class="span9">
+        <h2 class="title-divider"><span>About <span class="de-em">Us</span></span> <small>What & who makes us tick!</small></h2>
+        
+        <!-- About company -->
+        <h4>How It All Began</h4>
+        <p>Locallaunch was envisioned by 6 students at the Richard Ivey School of Business and was designed to address the needs of recent immigrants to Canada. Through numerous interviews it became apparent that although every new immigrant has a unique story and ambitions for their future, they share some similar needs. After being accepted into the country many notice that the job market doesn’t recognize the same credentials that proved them worthy to Immigrations Canada. Employers may not recognize the past work experience or educational attainment of extremely intelligent and driven new members of Canadian society. Many realize that they must upgrade their postsecondary degree, take additional classes, obtain certificates, etc. To pay for their new requirements many immigrants take on jobs that do not reflect their capabilities and struggle to obtain loans from banks. Locallaunch aims to solve these issues and help Canada to realize the great potential that lies within millions of underemployed immigrants.</p>
+        <h4>Our Philosophy</h4>
+        <p>Locallaunch was created to help immigrants recognize their full potential by connecting them with financing from lenders want to see newcomers to Canada succeed. Our philosophy is completely centered both the needs and desires of our users. To do so we are committed to maintaining communication with recent immigrants to Canada, our current users, and with the investing community. We welcome all feedback, questions or ideas for improving the Locallaunch service. Teamwork makes the dream work..</p>
+        <div class="title-divider" id="stats">
+          <h3><span>Vital <span class="de-em">Stats</span></span> <small>Stats to impress!</small></h3>
+        </div>
+        <div class="row-fluid stats">
+          <div class="span3 stat">
+            <div class="well">10380</div>
+            <small>Eager Supporters</small></div>
+          <div class="span3 stat">
+            <div class="well">1634</div>
+            <small>Funded Immigrants</small></div>
+          <div class="spn3 stat">
+            <div class="well">202143</div>
+            <small>Awaiting Funding</small></div>
+          <div class="span3 stat">
+            <div class="well">970%</div>
+            <small>Return on Investment</small></div>
+        </div>
+        
+        <!--Customer testimonial-->
+        <div class="block testimonials margin-top-large margin-bottom-large" id="testimonials">
+          <h3 class="title-divider"><span>Highly <span class="de-em">Recommended</span></span> <small>99% of our customers recommend us!</small></h3>
+          <div class="row">
+            <div class="span3">
+              <blockquote>
+                <p>"It's totally awesome, we're could imagine life without it!"</p>
+                <small><img src="{{ STATIC_URL }}img/team/jimi.jpg" alt="Jimi Bloggs" class="img-circle" /> Jimi Henderson <span class="spacer">/</span> <a href="#">@mrjimi</a></small> </blockquote>
+            </div>
+            <div class="span3">
+              <blockquote>
+                <p>"10 out of 10, highly recommended!"</p>
+                <small><img src="{{ STATIC_URL }}img/team/jobs.jpg" alt="Jimi Bloggs" class="img-circle" /> Steve Joggs <span class="spacer">/</span> <a href="#">Founder of Pear</a></small> </blockquote>
+            </div>
+            <div class="span3">
+              <blockquote>
+                <p>"I owe my Grammy to this service! Couldn't be happier!"</p>
+                <small><img src="{{ STATIC_URL }}img/team/adele.jpg" alt="Adele Bloggs" class="img-circle" /> Adaele <span class="spacer">/</span> <a href="#">@iamadele</a></small> </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
