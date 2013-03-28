@@ -12,6 +12,17 @@ urlpatterns = patterns('',
     #url(r'^privacy', 'articles.views.privacy_view', name='privacy'),
     #url(r'^contact', 'articles.views.contact_view', name='contact'),
 
+    # Site tutorial info    
+    url(r'^tutorial/build', 'articles.views.tutorial_build_view.article', name='tut-build'),
+    url(r'^tutorial/campaign', 'articles.views.tutorial_campaign_view.article', name='tut-campaign'),
+    url(r'^tutorial/advanced', 'articles.views.tutorial_advanced_view.article', name='tut-advanced'),
+
+    # Learning resources
+    url(r'^learn', 'plans.views.plan_view.plan', name='learn'),
+    url(r'^learn/(?P<article_id>\d+)', 'articles.views.article_view.article', name='tutorial'),
+    #url(r'^learn/(?P<lesson_id>\d+)', 'lessons.views.lesson_view', name='lesson'),
+    #url(r'^learn/(?P<lesson_id>\d+)/(?P<article_id>\d+)', 'articles.views.article_view', name='tutorial'),
+
     # Enabling the admin and accompanying documentation:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -23,19 +34,6 @@ urlpatterns = patterns('',
 """
 # Create your views here.
 # Basic contact info and static corporate info
-    
-    
-    
-
-    # Site tutorial info    
-	url(r'^tutorial/build', 'articles.views.tutorial_build_view', name='tut-build'),
-	url(r'^tutorial/campaign', 'articles.views.tutorial_campaign_view', name='tut-campaign'),
-	url(r'^tutorial/advanced', 'articles.views.tutorial_advanced_view', name='tut-advanced'),
-
-    # Learning resources
-    url(r'^learn', 'plans.views.plan_view', name='learn'),
-    url(r'^learn/(?P<lesson_id>\d+)', 'lessons.views.lesson_view', name='lesson'),
-    url(r'^learn/(?P<lesson_id>\d+)/(?P<article_id>\d+)', 'articles.views.article_view', name='tutorial'),
 
     # Accounts info pages and registration
 	url(r'^registration', 'accounts.views.registration_view', name='registration'),
