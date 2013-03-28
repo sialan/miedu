@@ -75,6 +75,6 @@ class LessonAdmin(admin.ModelAdmin):
                 }
         ),
     )
-    list_display = ('title', 'last_edited', 'tags',)
+    list_display = ('title', 'last_edited',)
 
 admin.site.register(Lesson, LessonAdmin)

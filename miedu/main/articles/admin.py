@@ -64,6 +64,6 @@ class ArticleAdmin(admin.ModelAdmin):
                 }
         ),
     )
-    list_display = ('title', 'created_on', 'last_edited', 'heading', 'tags',)
+    list_display = ('title', 'created_on', 'last_edited', 'heading',)
 
 admin.site.register(Article, ArticleAdmin)

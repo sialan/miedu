@@ -1,0 +1,84 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container"> 
+    <!-- Services -->
+    <div class="block features">
+      <h2 class="title-divider"><span>Build <span class="de-em">Skills</span></span> <small>Augment your abilities for the Canadian Market</small></h2>
+      <ul class="thumbnails">
+        <li class="span3"> <img src="img/features/feature-1.png" alt="Feature 1" />
+          <h3 class="title"><a href="#">Technical <span class="de-em">Vocabulary</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <img src="img/features/feature-2.png" alt="Feature 2" />
+          <h3 class="title"><a href="#">Language <span class="de-em">Training</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <img src="img/features/feature-3.png" alt="Feature 3" />
+          <h3 class="title"><a href="#">Cultural <span class="de-em">Training</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+        <li class="span3"> <img src="img/features/feature-4.png" alt="Feature 4" />
+          <h3 class="title"><a href="#">Interview <span class="de-em">Skills</span></a></h3>
+          <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+        </li>
+      </ul>
+      <div class="row"> 
+        <!-- Secondary features -->
+        <div class="span9">
+          <h3 class="title-divider"><span>Additional <span class="de-em">Training</span></span> <small>Other features to help you in your new world.</small></h3>
+          <div class="tabbable tabs-left feature-tabs row-fluid">
+            <ul class="nav nav-tabs span4 hidden-phone">
+              <li class="active"> <a href="#tab1" data-toggle="tab">Pop Culture <small>Kim Kardashian Matters</small><i class="icon-angle-right"></i></a> </li>
+              <li> <a href="#tab2" data-toggle="tab">Dating Tips <small>Meet your mate</small><i class="icon-angle-right"></i></a> </li>
+              <li> <a href="#tab3" data-toggle="tab">Personal Finance <small>Budgeting, Rent, Money Matters</small><i class="icon-angle-right"></i></a> </li>
+              <li><a href="#tab4" data-toggle="tab">Body Language <small>How do I look?</small><i class="icon-angle-right"></i></a></li>
+            </ul>
+            <div class="tab-content span8">
+              <div class="tab-pane active" id="tab1"> <img src="img/features/feature-1.png" alt="Feature 1" />
+                <h3 class="title visible-phone">Mobile Friendly</h3>
+                <!--only show on mobile when tabs are open-->
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+              </div>
+              <div class="tab-pane" id="tab2"> <img src="img/features/feature-2.png" alt="Feature 2" />
+                <h3 class="title visible-phone">24/7 Support</h3>
+                <!--only show on mobile when tabs are open-->
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+              </div>
+              <div class="tab-pane" id="tab3"> <img src="img/features/feature-3.png" alt="Feature 3" />
+                <h3 class="title visible-phone">Upgrade Assistance</h3>
+                <!--only show on mobile when tabs are open-->
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+              </div>
+              <div class="tab-pane" id="tab4"> <img src="img/features/feature-4.png" alt="Feature 4" />
+                <h3 class="title visible-phone">99.9% Uptime</h3>
+                <!--only show on mobile when tabs are open-->
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--Contact block-->
+        <div class="span3">
+          <h3 class="title-divider"><span>1-on-1 Training</span> <small>Get in touch!</small></h3>
+          <p><abbr title="Phone"><i class="icon-phone"></i></abbr> 1 800 TIT ANIC</p>
+          <p><abbr title="Email"><i class="icon-envelope"></i></abbr> info@teamtitanic.me</p>
+          <p><abbr title="Address"><i class="icon-home"></i></abbr> 260 Trott Drive, London, Canada N6G1B5</p>
+          <form id="contact-form" action="#" class="bordered-top-medium">
+            <input type="text" class="span2" placeholder="Your Number">
+            <input type="button" class="btn btn-inverse" value="Request A Callback">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

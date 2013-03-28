@@ -1,0 +1,74 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container" id="about">
+    <div class="row"> 
+      <!-- sidebar -->
+      <div class="span3 sidebar">
+        <div class="section-menu">
+          <ul class="nav nav-list">
+            <li class="nav-header">In This Section</li>
+            <li><a href="about.html" class="first">About Us <small>How It All Began</small><i class="icon-angle-right"></i></a></li>
+            <li class="active"><a href="team.html">The Team <small>Our team of stars</small><i class="icon-angle-right"></i></a></li>
+            <li><a href="contact.html">Contact Us<small>How to get in touch</small><i class="icon-angle-right"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <!--main content-->
+      <div class="span9">
+        <h2 class="title-divider"><span>The <span class="de-em">Team</span></span> <small>Our team of stars! (Vector images by <a href="http://www.vectorportal.com/">Vectorportal</a>)</small></h2>
+        
+        <!-- The team -->
+        <div class="block team margin-top-large" id="team">
+
+          {% for staff in team_data_list %}
+          {% if staff.username == admin %}
+          {% else %}
+          <div class="media">
+            <div class="pull-left"> <img src="{{ dp.url }}" class="img-polaroid media-object" alt="{{ first_name }}" /> </div>
+            <div class="media-body">
+              <h4 class="media-heading"></h4>
+              <p class="role">{{ headline }}</p>
+              <p>{{ objective }}</p>
+              <ul class="inline">
+                <li><a href="http://twitter.com/{{ twitter_id }}"><i class="icon-twitter"></i> Twitter</a></li>
+                <li><a href="http://facebook.com/{{ facebook_id }}"><i class="icon-facebook"></i> Facebook</a></li>
+                <li><a href="http://linkedin.com/{{ linkedin_id }}"><i class="icon-linkedin"></i> LinkedIn</a></li>
+                <li><a href="http://plus.google.com/{{ other_id }}"><i class="icon-google-plus"></i> Google+</a></li>
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        
+        <!--Customer testimonial-->
+        <div class="block testimonials margin-top-large margin-bottom-large" id="testimonials">
+          <h3 class="title-divider"><span>Highly <span class="de-em">Recommended</span></span> <small>99% of our customers recommend us!</small></h3>
+          <div class="row">
+            <div class="span3">
+              <blockquote>
+                <p>"It's totally awesome, we're could imagine life without it!"</p>
+                <small><img src="img/team/jimi.jpg" alt="Jimi Bloggs" class="img-circle" /> Jimi Bloggs <span class="spacer">/</span> <a href="#">@mrjimi</a></small> </blockquote>
+            </div>
+            <div class="span3">
+              <blockquote>
+                <p>"10 out of 10, highly recommended!"</p>
+                <small><img src="img/team/jobs.jpg" alt="Jimi Bloggs" class="img-circle" /> Steve Bloggs <span class="spacer">/</span> <a href="#">Founder of Apple</a></small> </blockquote>
+            </div>
+            <div class="span3">
+              <blockquote>
+                <p>"Our productivity & sales are up! Couldn't be happier!"</p>
+                <small><img src="img/team/adele.jpg" alt="Adele Bloggs" class="img-circle" /> Adele Bloggs <span class="spacer">/</span> <a href="#">@iamadele</a></small> </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

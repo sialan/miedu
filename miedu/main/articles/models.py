@@ -19,6 +19,7 @@ class Article(models.Model):
     exercises = models.ManyToManyField('exercises.Exercise', null=True, blank=True)
     tags = TaggableManager()
     main = models.BooleanField()
+    #TODO: add a url_field and migrate
 
 class Tab(models.Model):
     STYLE_CHOICES = (
@@ -36,6 +37,8 @@ class Tab(models.Model):
     field_one = models.TextField(null=True, blank=True)
     field_two = models.TextField(null=True, blank=True)
     field_three = models.TextField(null=True, blank=True)
+    # TODO: migrate
+    # url = models.CharField(max_length=200, null=True, blank=True)
 
 class ArticleComment(models.Model):
     created = models.DateTimeField(auto_now_add=True)

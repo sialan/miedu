@@ -1,0 +1,46 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container">
+    <div class="row-fluid">
+      <h2 class="title-divider"><span>Learn <span class="de-em">New Skills</span></span> <small>In conjunction with the Richard Ivey School of Business</small></h2>
+      <ul class="nav nav-tabs hidden-phone" id="quicksand-categories">
+        <li class="active"><a href="#" class="all">All Skills</a></li>
+        <li><a href="#" class="type-business">Business</a></li>
+        <li><a href="#" class="type-communication">Communication</a></li>
+        <li><a href="#" class="type-financial">Financial</a></li>
+        <li><a href="#" class="type-language">Language</a></li>
+        <li><a href="#" class="type-social">Social</a></li>
+        <li><a href="#" class="type-technical">Technical</a></li>
+      </ul>
+    </div>
+    <!--Customers-->
+    <ul class="thumbnails block customers" id="quicksand">
+      {% for article in article_data_list %}
+      <li class="span4 type-{{ article.tags.all()[0].name }}" data-id="id-{{ forloop.counter }}" data-type="type-{{ article.tags.all()[0].name }}">
+        <a href="">
+          <span class="inner-wrapper">
+            <!--
+            <span class="img-wrapper">
+              <img src="" alt="" />
+            </span>
+            -->
+            <span class="title">
+              {{ article.title }}
+            </span>
+            <span class="description">
+              {{ article.body[:200] }}
+            </span>
+          </span>
+        </a>
+      </li>
+      {% endfor %}
+      
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

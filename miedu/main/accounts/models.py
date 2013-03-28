@@ -11,20 +11,21 @@ class AccountManager(BaseUserManager):
 
 class Account(AbstractUser):
     RELATIONSHIP_CHOICES = (
-        ('S', 'Single'),
-        ('A', 'Attached'),
-        ('M', 'Married'),
-        ('D', 'Divorced'),
-        ('W', 'Widowed'),
-        ('C', "It's complicated"),
+        ('O', 'Other'),
+        ('A', 'Accounting'),
+        ('AA', 'Airlines/Aviation'),
+        ('ADR', 'Alternative Dispute Resolution'),
+
     )
     INDUSTRY_CHOICES = (
         ('S', 'Single'),
-        ('M', 'Medical'),
-        ('M', 'Married'),
-        ('D', 'Divorced'),
-        ('W', 'Widowed'),
-        ('C', "It's complicated"),
+        ('O', 'Other'),
+        ('A', 'Analyst'),
+        ('BA', 'Business Analyst'),
+        ('BTA', 'Business Technology Analyst'),
+        ('S', 'Student'),
+        ('F', "Founder/Co-Founder"),
+
     )
     FUNCTION_CHOICES = (
         ('A', 'Accounting'),
@@ -38,6 +39,9 @@ class Account(AbstractUser):
     date_of_birth = models.DateField(blank=True, null=True)
     marital_status = models.CharField(max_length=1, default='S', choices=RELATIONSHIP_CHOICES)
     kids = models.IntegerField(default=0)
+
+    # TODO: migrate
+    # dp = models.ImageField(upload_to="accounts/")
 
     educations = models.ManyToManyField('accounts.Organization', through='Education', related_name='mi_education')
     experiences = models.ManyToManyField('accounts.Organization', through='Experience', related_name='mi_experience')
@@ -54,8 +58,8 @@ class Account(AbstractUser):
     current_country = models.CharField(max_length=50, blank=True, null=True)
     current_city = models.CharField(max_length=50, blank=True, null=True)
 
-    industry = models.CharField(max_length=4, default='S', choices=INDUSTRY_CHOICES)
-    function = models.CharField(max_length=4, default='S', choices=FUNCTION_CHOICES)
+    industry = models.CharField(max_length=4, default='O', choices=INDUSTRY_CHOICES)
+    function = models.CharField(max_length=4, default='O', choices=FUNCTION_CHOICES)
     objective = models.TextField()
     headline = models.TextField()
     unread = models.IntegerField(blank=True, null=True)
@@ -72,7 +76,7 @@ class Account(AbstractUser):
     purchases = models.ManyToManyField('campaigns.Campaign', through='transactions.Transaction', related_name='purchase', blank=True, null=True)
 
     def __unicode__(self):
-        return u'%s' % (self.username)
+        return u'%s' % (self.first_name + self.last_name)
 
 class OrganizationManager(models.Manager):
     """

@@ -1,0 +1,172 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container">
+    <div class="row-fluid">
+      <h2 class="title-divider"><span>Lesson <span class="de-em">Article</span></span> <small><a href="blog.html"><i class="icon-arrow-left"></i> Back to Lessons</a></small></h2>
+    </div>
+    <div class="row"> 
+      
+      <!--Main Content-->
+      <div class="span9 blog-post"> 
+        
+        <!-- Blog post -->
+        <div class="media row-fluid">
+          <div class="span1 hidden-phone"> 
+            <!-- Date desktop -->
+            <div class="date-wrapper"> <span class="date-m">{{ article.created_on.month }}</span> <span class="date-d">{{ article.created_on.day }}</span> </div>
+            <!-- Meta details desktop -->
+            <p class="meta muted"> <i class="icon-user"></i> <a href="#">{{ article.created_by }}</a> </p>
+          </div>
+          <div class="span11">
+            <div class="media-body">
+              <div class="tags"><a href="#" class="tag">Lunch and Learn</a> / <a href="#" class="type">event</a></div>
+              <h3 class="title media-heading">Language Instruction for Newcomers to Canada (LINC)</h3>
+              
+              <!-- Meta details mobile -->
+              <ul class="inline meta muted visible-phone">
+                <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> {{ article.created_on }}</li>
+                <li><i class="icon-user"></i> <a href="#">{{ article.created_by }}</a></li>
+              </ul>
+              <div class="media-object"> <img src="img/blog/water-pump.jpg" alt="Picture of frog by Ben Fredericson" /> </div>
+              <p class="lead">Learn more at <a href="http://immigration.london.ca/learning/learn-english.htm">http://immigration.london.ca/learning/learn-english.htm</a></p>
+              <p>Free classes are open to newcomers 17 years or older. Contact the LINC Assessment Centre at the London CrossCultural Learner Centre to determine your language level. Licensed child care is available at or near some <strong>LINC</strong> sites. Students may be eligible for free child care or transportation.
+              </p>
+              <p>Egestas scelerisque, vel auctor rhoncus. Urna penatibus, velit dis, non parturient scelerisque ac tempor a enim? Aenean? Urna dictumst, enim nec odio, turpis. Magnis tempor mus, egestas integer sit eu eu lectus vel. Hac lorem aliquet nec mattis, purus parturient in pulvinar nascetur aliquam! Sed cursus? Pid, nec eros quis, tincidunt odio pellentesque integer, porta, nunc? Duis aenean! In tortor risus enim.</p>
+              <p>Sed elit ac? Vel parturient magna placerat non etiam.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!--Comments-->
+        <div class="comments" id="comments">
+          <h3>Comments</h3>
+          <ul class="media-list">
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/deniro.jpg" alt="Picture of Erin" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Thu 16th Mar 2013</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Robert</a></li>
+                </ul>
+                <h5 class="media-heading">Anyone want a ride there?</h5>
+                <p>Hey guys I am going to this event, would love it if we could get a whole group together! I was planning on going at 2pm if anyone is interested please email me back at <a href="#">robdeniro@gmail.com</a></p>
+              </div>
+            </li>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/deniro.jpg" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Tue 15th Jan 2013</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Alex</a></li>
+                </ul>
+                <h5 class="media-heading">Turpis odio dictumst tempor ac et!</h5>
+                <p>Turpis odio dictumst tempor ac et!Turpis odio dictumst tempor ac et!Turpis odio dictumst tempor ac et!Turpis odio dictumst tempor ac et!</p>
+              </div>
+            </li>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/bono.jpg" alt="Picture of Joe" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Fri 11th Jan 2013</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Jo</a></li>
+                </ul>
+                <h5 class="media-heading">Urna natoque in phasellus rhoncus aliquet penatibus</h5>
+                <p>Urna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibus</p>
+              </div>
+            </li>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/bono.jpg" alt="Picture of Jo" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Sat 5th Jan 2013</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Dave</a></li>
+                </ul>
+                <h5 class="media-heading">Urna natoque in phasellus rhoncus aliquet penatibus</h5>
+                <p>Urna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibus</p>
+              </div>
+            </li>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/deniro.jpg" alt="Picture of Jo" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Thu 3rd Jan 2013</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Alex</a></li>
+                </ul>
+                <h5 class="media-heading">Enim augue elit adipiscing placerat natoque</h5>
+                <p>Enim augue elit adipiscing placerat natoqueEnim augue elit adipiscing placerat natoqueEnim augue elit adipiscing placerat natoqueEnim augue elit adipiscing placerat natoque</p>
+              </div>
+            </li>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/jobs.jpg" alt="Picture of Tom" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Tue 1st Jan 2013</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Tom</a></li>
+                </ul>
+                <h5 class="media-heading">Urna natoque in phasellus rhoncus aliquet penatibus</h5>
+                <p>Urna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibusUrna natoque in phasellus rhoncus aliquet penatibus</p>
+              </div>
+            </li>
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/adele.jpg" alt="Picture of Dave" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> Fri 28th Dec 2012</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">Erin</a></li>
+                </ul>
+                <h5 class="media-heading">Porta risus porttitor facilisis sit dapibus</h5>
+                <p>Porta risus porttitor facilisis sit dapibusPorta risus porttitor facilisis sit dapibusPorta risus porttitor facilisis sit dapibusPorta risus porttitor facilisis sit dapibus</p>
+              </div>
+            </li>
+          </ul>
+          <div class="comment-form">
+            <form id="comment-form">
+              <fieldset>
+                <legend>Add Comment</legend>
+                <input type="text" class="input-block-level" placeholder="Name">
+                <br />
+                <input type="text" class="input-block-level" placeholder="Email">
+                <br />
+                <textarea rows="8" class="input-block-level" placeholder="Comment"></textarea>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  Subscribe to updates </label>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!--Sidebar-->
+      <div class="span3 sidebar sidebar-right">
+        <div class="inner">
+          <div class="block">
+            <div class="input-append">
+              <input class="span2" id="appendedInputButton" type="text" placeholder="Search">
+              <button class="btn" type="button">Go!</button>
+            </div>
+          </div>
+
+          <div class="block">
+            <h4 class="title-divider"><span>Tags</span></h4>
+            <div class="tag-cloud">
+              {% for tag in article.tags.all %}
+              <span><a href="#">{{ tag.name }}</a></span> 
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="block">
+            <h4 class="title-divider"><span>Popular</span></h4>
+            <ul class="big-list tags">
+              <li><a href="#">English for Engineers</a> (100+ Views)</li>
+              <li><a href="#">Body Language for the Win</a> (100+ Views)</li>
+              <li><a href="#">Nail the Interviewnd</a> (100+ Views)</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

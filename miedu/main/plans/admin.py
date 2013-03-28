@@ -38,6 +38,6 @@ class PlanAdmin(admin.ModelAdmin):
                 }
         ),
     )
-    list_display = ('category', 'subcategory', 'title', 'tags',)
+    list_display = ('category', 'subcategory', 'title',)
 
 admin.site.register(Plan, PlanAdmin)
