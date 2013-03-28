@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     # Default url
     url(r'^$', 'home.views.home_view.index', name='home'),
     url(r'^about', 'home.views.about_view.about', name='about'),
-    #url(r'^team', 'accounts.views.team_view.team', name='team'),
+    url(r'^team', 'accounts.views.team_view.team', name='team'),
     #url(r'^terms', 'articles.views.terms_view', name='terms'),
     #url(r'^privacy', 'articles.views.privacy_view', name='privacy'),
     #url(r'^contact', 'articles.views.contact_view', name='contact'),
