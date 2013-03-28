@@ -98,6 +98,9 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     'miedu/templates',
     'miedu/main/home',
+    'miedu/main/accounts',
+    'miedu/main/articles',
+    'miedu/main/plans',
 )
 
 INSTALLED_APPS = (
