@@ -69,10 +69,10 @@
         <div class="row-fluid">
           <div class="span8"> 
             <!--branding/logo--> 
-            <a class="brand" href="#" title="Home">
+            <a class="brand" href="{% url 'home' %}" title="Home">
             <h1><span>local</span>launch<span>.</span></h1>
             </a>
-            <div class="slogan">Teamwork makes the dream work</div>
+            <div class="slogan">crowdfunding your education</div>
           </div>
           
           <!--header rightside-->
@@ -116,12 +116,12 @@
           
           <!--main navigation-->
           <ul class="nav" id="main-menu">
-            <li class="home-link"><a href="#"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
+            <li class="home-link"><a href="{% url 'home' %}"><i class="icon-home hidden-phone"></i><span class="visible-phone">Home</span></a></li>
             <li class="dropdown"> <a href="#" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">About +</a> 
               <!-- Dropdown Menu -->
               <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">About Us</a></li>
-                <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Our Team</a></li>
+                <li role="menuitem"><a href="{% url 'about' %}" tabindex="-1" class="menu-item">About Us</a></li>
+                <li role="menuitem"><a href="{% url 'team' %}" tabindex="-1" class="menu-item">Our Team</a></li>
                 <li role="menuitem"><a href="#" tabindex="-1" class="menu-item">Contact</a></li>
               </ul>
             </li>
@@ -130,17 +130,17 @@
               <ul class="dropdown-menu mega-menu" role="menu" aria-labelledby="features-drop">
                 <li class="mega-menu-wrapper" role="menuitem"> <span class="menu-title">Change your Life Today</span>
                   <ul class="row-fluid" role="menu">
-                    <li class="span4" role="menuitem"> <a href="#"><img src="{{ STATIC_URL }}img/features/feature-1.png" alt="Feature 1" /></a> <a href="#" tabindex="-1" class="menu-item">Getting Started</a> <span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
-                    <li class="span4" role="menuitem"> <a href="#"><img src="{{ STATIC_URL }}img/features/feature-2.png" alt="Feature 2" /></a> <a href="#" tabindex="-1" class="menu-item">Build your Skills</a> <span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
-                    <li class="span4" role="menuitem"> <a href="#"><img src="{{ STATIC_URL }}img/features/feature-4.png" alt="Feature 4" /></a> <a href="#" tabindex="-1" class="menu-item">Run a Campaign</a> <span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
+                    <li class="span4" role="menuitem"> <a href="#"><img src="{{ STATIC_URL }}img/features/feature-1.png" alt="Feature 1" /></a> <a href="#" tabindex="-1" class="menu-item">Build yur skills</a> <span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
+                    <li class="span4" role="menuitem"> <a href="#"><img src="{{ STATIC_URL }}img/features/feature-2.png" alt="Feature 2" /></a> <a href="#" tabindex="-1" class="menu-item">Create a blueprint</a> <span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
+                    <li class="span4" role="menuitem"> <a href="#"><img src="{{ STATIC_URL }}img/features/feature-4.png" alt="Feature 4" /></a> <a href="#" tabindex="-1" class="menu-item">Advanced tips</a> <span>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio!</span> </li>
                   </ul>
                 </li>
               </ul>
             </li>
             <li><a href="#" class="menu-item">Blog</a></li>
-            <li><a href="#" class="menu-item">Learn</a></li>
-            <li><a href="#" class="menu-item">Browse Campaigns</a></li>
-            <li><a href="#" class="menu-item">Start a Campaign</a></li>
+            <li><a href="{% url 'learn' %}" class="menu-item">Learn</a></li>
+            <li><a href="#" class="menu-item">Browse Blueprints</a></li>
+            <li><a href="#" class="menu-item">Create a Blueprint</a></li>
           </ul>
         </div>
         <!--/.nav-collapse --> 
