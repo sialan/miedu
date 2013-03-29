@@ -124,7 +124,7 @@ class Education(models.Model):
 
 class Experience(models.Model):
     account = models.ForeignKey('Account')
-    corganization = models.ForeignKey('Organization')
+    organization = models.ForeignKey('Organization')
     
     tasks = TaggableManager()
     notes = models.TextField(blank=True, null=True)

@@ -15,7 +15,7 @@ class CampaignMilestoneInline(admin.StackedInline):
             'classes': ('collapse',),
             'fields': (
                 ('subheading', 'media'),
-                ('caption', 'completed'),
+                'completed',
                 'body',
                 ('milestone_date', 'completed'),
             )                

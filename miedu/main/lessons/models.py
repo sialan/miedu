@@ -17,7 +17,7 @@ class Lesson(models.Model):
     organization = models.ForeignKey('accounts.Organization', null=True, blank=True)
     partner_name = models.CharField(max_length=50, null=True, blank=True)
     partner_url = models.CharField(max_length=200, null=True, blank=True)
-    partner_dp = dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
+    partner_dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
     credit_name = models.CharField(max_length=10, null=True, blank=True)
     credit_value = models.IntegerField(null=True, blank=True)
     image = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
@@ -28,7 +28,7 @@ class Lesson(models.Model):
     effort_units = models.CharField(max_length=10)
     last_edited = models.DateTimeField(auto_now=True)
 
-    resources = models.ManyToManyField('multimedia.Multimedia', related_name='resource', null=True, blank=True)
+    resources = models.ManyToManyField('multimedia.Multimedia', related_name='resources', null=True, blank=True)
     tags = TaggableManager()
 
 class LessonArticle(models.Model):

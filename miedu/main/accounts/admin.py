@@ -203,11 +203,11 @@ class AccountAdmin(UserAdmin):
                                        'groups', 'user_permissions')}),
         (('Important dates'), {'fields': ('last_login', 'date_joined')}),
 
-        class Media:
-            js = ('js/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
     )
 
     list_display = UserAdmin.list_display + ('date_of_birth',)
+    class Media:
+        js = ('js/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
 # Now register the new UserAdmin...
 admin.site.unregister(Group)
 admin.site.register(Organization)
