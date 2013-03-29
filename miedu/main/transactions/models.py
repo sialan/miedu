@@ -15,6 +15,7 @@ class Transaction(models.Model):
     account = models.ForeignKey('accounts.Account')
     campaign = models.ForeignKey('campaigns.Campaign')
 
+    # todo add a project field
     active = models.BooleanField()
     completed = models.BooleanField()
     consummated = models.BooleanField()

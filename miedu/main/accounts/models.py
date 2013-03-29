@@ -5,6 +5,7 @@ from django.contrib.auth.models import (
 from taggit.managers import TaggableManager
 from taggit.models import TaggedItemBase, TagBase, GenericTaggedItemBase
 from tags.models import *
+from filebrowser.fields import FileBrowseField
 
 class AccountManager(BaseUserManager):
     pass
@@ -40,8 +41,7 @@ class Account(AbstractUser):
     marital_status = models.CharField(max_length=1, default='S', choices=RELATIONSHIP_CHOICES)
     kids = models.IntegerField(default=0)
 
-    # TODO: migrate
-    dp = models.ImageField(upload_to="accounts/")
+    dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
 
     educations = models.ManyToManyField('accounts.Organization', through='Education', related_name='mi_education')
     experiences = models.ManyToManyField('accounts.Organization', through='Experience', related_name='mi_experience')
@@ -96,7 +96,7 @@ class Organization(Group):
     phone = models.CharField(max_length=50, blank=True, null=True)
     address = models.CharField(max_length=50, blank=True, null=True)
     zip_code = models.CharField(max_length=10, blank=True, null=True)
-    dp = models.ImageField(upload_to="accounts/")
+    dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
     tags = TaggableManager()
 
     # Two managers for this model - the first is default 
@@ -124,7 +124,7 @@ class Education(models.Model):
 
 class Experience(models.Model):
     account = models.ForeignKey('Account')
-    organization = models.ForeignKey('Organization')
+    corganization = models.ForeignKey('Organization')
     
     tasks = TaggableManager()
     notes = models.TextField(blank=True, null=True)

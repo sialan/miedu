@@ -4,6 +4,7 @@ from taggit.managers import TaggableManager
 from multimedia.models import Multimedia
 from accounts.models import Account, Organization
 from articles.models import Article
+from filebrowser.fields import FileBrowseField
 
 # Create your models here.
 class Lesson(models.Model):
@@ -16,10 +17,10 @@ class Lesson(models.Model):
     organization = models.ForeignKey('accounts.Organization', null=True, blank=True)
     partner_name = models.CharField(max_length=50, null=True, blank=True)
     partner_url = models.CharField(max_length=200, null=True, blank=True)
-    partner_dp = models.ImageField(upload_to="lessons/", null=True, blank=True)
+    partner_dp = dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
     credit_name = models.CharField(max_length=10, null=True, blank=True)
     credit_value = models.IntegerField(null=True, blank=True)
-    image = models.ImageField(upload_to="lessons/")
+    image = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
     video_intro = models.ManyToManyField('multimedia.Multimedia', related_name='video_intro', null=True, blank=True)
     prerequisites = models.TextField(default="none")
     objectives = models.TextField()

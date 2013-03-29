@@ -192,6 +192,7 @@ class AccountAdmin(UserAdmin):
                                 ('origin_country', 'origin_city'),
                                 ('current_country', 'current_city'),
                                 ('industry', 'function'),
+                                'dp',
                                 'objective',
                                 'headline',
                                 'unread'
@@ -201,6 +202,9 @@ class AccountAdmin(UserAdmin):
         (('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        'groups', 'user_permissions')}),
         (('Important dates'), {'fields': ('last_login', 'date_joined')}),
+
+        class Media:
+            js = ('js/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
     )
 
     list_display = UserAdmin.list_display + ('date_of_birth',)

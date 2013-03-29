@@ -13,9 +13,9 @@ urlpatterns = patterns('',
     #url(r'^contact', 'articles.views.contact_view', name='contact'),
 
     # Site tutorial info    
-    url(r'^tutorial/build', 'home.views.tutorial_build_view.article', name='tut-build'),
-    url(r'^tutorial/campaign', 'home.views.tutorial_campaign_view.article', name='tut-campaign'),
-    url(r'^tutorial/advanced', 'home.views.tutorial_advanced_view.article', name='tut-advanced'),
+    url(r'^tutorial/build', 'articles.views.tutorial_build_view.article', name='tut-build'),
+    url(r'^tutorial/campaign', 'articles.views.tutorial_campaign_view.article', name='tut-campaign'),
+    url(r'^tutorial/advanced', 'articles.views.tutorial_advanced_view.article', name='tut-advanced'),
 
     # Blogs and Event info
     url(r'^blog', 'blogs.views.blog_view', name='blog'),
@@ -32,6 +32,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^grappelli/', include('grappelli.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
+    url(r'', include('social_auth.urls')),
 
 )
 

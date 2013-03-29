@@ -10,3 +10,8 @@ django-storages==1.1.6
 django-taggit==0.9.3
 gunicorn==0.17.2
 wsgiref==0.1.2
+django-filebrowser==3.5.2
+boto==2.8.0
+django-socialauth==0.1.2c
+django-merchant==0.0.8a0
+stripe==1.7.10

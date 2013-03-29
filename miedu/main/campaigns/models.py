@@ -21,8 +21,8 @@ class Campaign(models.Model):
     headline = models.CharField(max_length=50)
     description = models.TextField()
 
-    endline = models.CharField(max_length=50)
-    summary = models.TextField()
+    endline = models.CharField(max_length=50, null=True, blank=True)
+    summary = models.TextField(null=True, blank=True)
     call_to_action = models.CharField(max_length=50, null=True, blank=True)
 
     minimum_pledge = models.IntegerField(default=1)
@@ -44,22 +44,14 @@ class Campaign(models.Model):
     def __unicode__(self):
         return unicode("%s: %s" % (self.account, self.title))
 
-class ContentBlock(models.Model):
-    STYLE_CHOICES = (
-        ('B', 'Bullet'),
-        ('I', 'Image'),
-        ('M', 'Multimedia'),
-        ('T', 'Text'),
-    )
+class CampaignMilestone(models.Model):
     campaign = models.ForeignKey('campaigns.Campaign')
     subheading = models.CharField(max_length=50)
-    style = models.CharField(max_length=2, default='B', choices=STYLE_CHOICES)
     media = models.ManyToManyField('multimedia.Multimedia', null=True, blank=True)
     caption = models.CharField(max_length=200, null=True, blank=True)
     body = models.TextField(null=True, blank=True)
-    field_one = models.TextField(null=True, blank=True)
-    field_two = models.TextField(null=True, blank=True)
-    field_three = models.TextField(null=True, blank=True)
+    milestone_date = models.DateTimeField()
+    completed = models.BooleanField()
 
 class CampaignComment(models.Model):
     created = models.DateTimeField(auto_now_add=True)

@@ -1,6 +1,7 @@
 from django.db import models
 from campaigns.models import Campaign
 from multimedia.models import Multimedia
+from filebrowser.fields import FileBrowseField
 
 
 # Create your models here.
@@ -15,7 +16,7 @@ class Project(models.Model):
     call_to_action = models.CharField(max_length=34, null=True, blank=True)
     ranking = models.IntegerField(null=True, blank=True)
     main = models.BooleanField()
-    dp_url = models.CharField(max_length=200, null=True, blank=True)
+    dp_url = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
 
     created_on = models.DateTimeField(auto_now_add=True)
     delivery_date = models.DateTimeField(null=True, blank=True)
@@ -23,3 +24,12 @@ class Project(models.Model):
     funding_amount = models.IntegerField()
     number_available = models.IntegerField(default=1)
     number_claimed = models.IntegerField(default=0)
+
+class ProjectMilestone(models.Model):
+    project = models.ForeignKey('projects.Project')
+    subheading = models.CharField(max_length=50)
+    media = models.ManyToManyField('multimedia.Multimedia', null=True, blank=True)
+    caption = models.CharField(max_length=200, null=True, blank=True)
+    body = models.TextField(null=True, blank=True)
+    milestone_date = models.DateTimeField()
+    completed = models.BooleanField()

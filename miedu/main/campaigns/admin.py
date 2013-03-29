@@ -1,10 +1,10 @@
 from django.contrib import admin
-from campaigns.models import Campaign, ContentBlock, CampaignComment, CampaignFAQItem
+from campaigns.models import Campaign, CampaignMilestone, CampaignComment, CampaignFAQItem
 from projects.models import Project
 
 
-class ContentBlockInline(admin.StackedInline):
-    model = ContentBlock
+class CampaignMilestoneInline(admin.StackedInline):
+    model = CampaignMilestone
     max_num = 5
     extra = 1
     readonly_fields = (
@@ -14,12 +14,10 @@ class ContentBlockInline(admin.StackedInline):
         ('Additional Content Blocks', {
             'classes': ('collapse',),
             'fields': (
-                ('subheading', 'style'),
+                ('subheading', 'media'),
+                ('caption', 'completed'),
                 'body',
-                ('media', 'caption'),
-                'field_one',
-                'field_two',
-                'field_three',
+                ('milestone_date', 'completed'),
             )                
         }),
     )
@@ -79,7 +77,7 @@ class ProjectInline(admin.StackedInline):
     )
 
 class CampaignAdmin(admin.ModelAdmin):
-    inlines = [ContentBlockInline, CampaignCommentInline, FAQInline, ProjectInline]
+    inlines = [CampaignMilestoneInline, CampaignCommentInline, FAQInline, ProjectInline]
     readonly_fields = (
         'created_on',
     )

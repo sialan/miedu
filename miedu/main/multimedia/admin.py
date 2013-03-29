@@ -30,7 +30,7 @@ class MultimediaAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': ( 
                     ('category', 'subcategory', 'level'),
-                    ('title', 'resource_uri', 'caption_overlay'),
+                    ('title', 'resource', 'caption_overlay'),
                     'description',
                     ('uploaded_by', 'uploaded_on', 'last_edited'),
                     ('organization', 'owner', 'owner_url'),

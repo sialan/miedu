@@ -1,6 +1,7 @@
 from django.db import models
 from accounts.models import Account
 from taggit.managers import TaggableManager
+from filebrowser.fields import FileBrowseField
 
 # Create your models here.
 class Post(models.Model):
@@ -23,11 +24,11 @@ class Post(models.Model):
     subcategory = models.CharField(max_length=2, default='UN', choices=TYPE_CHOICES)
     body = models.TextField()
     tagline = models.CharField(max_length=60, null=True, blank=True)
-    tags = TaggableManager()
     link = models.CharField(max_length=200, null=True, blank=True)
-    photo = models.ImageField(upload_to="blogs/", blank=True)
+    photo = FileBrowseField("Image", max_length=200, extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey('accounts.Account', related_name="%(app_label)s_%(class)s_related", null=True, blank=True)
+    tags = TaggableManager()
 
     def __unicode__(self):
         return unicode("%s: %s" % (self.title, self.body[:60]))

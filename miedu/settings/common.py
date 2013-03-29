@@ -111,6 +111,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.admindocs',
     'taggit',
@@ -127,10 +128,34 @@ INSTALLED_APPS = (
     'transactions',
     'south',
     'storages',
+    'social_auth',
+    'billing',
+
 )
+
+AUTHENTICATION_BACKENDS = (
+    'social_auth.backends.twitter.TwitterBackend',
+    'social_auth.backends.facebook.FacebookBackend',
+    'social_auth.backends.contrib.linkedin.LinkedinBackend',
+)
+
+TWITTER_CONSUMER_KEY = ''
+TWITTER_CONSUMER_SECRET = ''
+FACEBOOK_APP_ID = ''
+FACEBOOK_API_SECRET = ''
+LINKEDIN_CONSUMER_KEY = ''
+LINKEDIN_CONSUMER_SECRET = ''
 
 AUTH_USER_MODEL = 'accounts.Account'
 GRAPPELLI_ADMIN_TITLE = 'locallaunch'
+
+MERCHANT_TEST_MODE = True # Toggle for live
+MERCHANT_SETTINGS = {
+    "stripe": {
+        "API_KEY": "",
+        "PUBLISHABLE_KEY": "", # Used for stripe integration
+    }
+}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

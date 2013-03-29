@@ -1,28 +1,7 @@
 from django.contrib import admin
-from articles.models import Article, Tab, ArticleComment
+from articles.models import Article, ArticleComment
 from projects.models import Project
 
-
-class TabInline(admin.StackedInline):
-    model = Tab
-    max_num = 5
-    extra = 1
-    readonly_fields = (
-    )
-
-    fieldsets = (
-        ('Additional Content Blocks', {
-            'classes': ('collapse',),
-            'fields': (
-                ('subheading', 'style'),
-                'body',
-                ('media_resource', 'caption'),
-                'field_one',
-                'field_two',
-                'field_three',
-            )                
-        }),
-    )
 
 class ArticleCommentInline(admin.TabularInline):
     model = ArticleComment
@@ -44,7 +23,7 @@ class ArticleCommentInline(admin.TabularInline):
     )
 
 class ArticleAdmin(admin.ModelAdmin):
-    inlines = [TabInline, ArticleCommentInline]
+    inlines = [ArticleCommentInline]
     readonly_fields = (
         'created_on',
         'last_edited',
@@ -59,7 +38,7 @@ class ArticleAdmin(admin.ModelAdmin):
                     'resources',
                     'endline',
                     'summation',
-                    'tags',
+                    ('tags', 'url'),
                     )
                 }
         ),
