@@ -41,7 +41,7 @@ class Account(AbstractUser):
     kids = models.IntegerField(default=0)
 
     # TODO: migrate
-    # dp = models.ImageField(upload_to="accounts/")
+    dp = models.ImageField(upload_to="accounts/")
 
     educations = models.ManyToManyField('accounts.Organization', through='Education', related_name='mi_education')
     experiences = models.ManyToManyField('accounts.Organization', through='Experience', related_name='mi_experience')

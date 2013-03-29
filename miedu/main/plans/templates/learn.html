@@ -20,7 +20,7 @@
     <!--Customers-->
     <ul class="thumbnails block customers" id="quicksand">
       {% for article in article_data_list %}
-      <li class="span4 type-{{ article.tags.all()[0].name }}" data-id="id-{{ forloop.counter }}" data-type="type-{{ article.tags.all()[0].name }}">
+      <li class="span4 type-{{ article.tags.all.0.name }}" data-id="id-{{ forloop.counter }}" data-type="type-{{ article.tags.all.0.name }}">
         <a href="">
           <span class="inner-wrapper">
             <!--
@@ -32,7 +32,7 @@
               {{ article.title }}
             </span>
             <span class="description">
-              {{ article.body[:200] }}
+              {{ article.body|truncatewords:30|linebreaks }}
             </span>
           </span>
         </a>

@@ -1,0 +1,117 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container">
+    <div class="row-fluid">
+      <h2 class="title-divider"><span>Company <span class="de-em">Blog</span></span> <small><a href="blog.html"><i class="icon-arrow-left"></i> Back to Blog</a></small></h2>
+    </div>
+    <div class="row"> 
+      
+      <!--Main Content-->
+      <div class="span9 blog-post"> 
+        
+        <!-- Blog post -->
+        <div class="media row-fluid">
+          <div class="span1 hidden-phone"> 
+            <!-- Date desktop -->
+            <div class="date-wrapper"> <span class="date-m">{{ post.created.month }}</span> <span class="date-d">{{ post.created.day }}</span> </div>
+            <!-- Meta details desktop -->
+            <p class="meta muted"> <i class="icon-user"></i> <a href="#">{{ post.author }}</a> </p>
+          </div>
+          <div class="span11">
+            <div class="media-body">
+              <div class="tags"><a href="#" class="tag">{{ post.category }}</a> / <a href="#" class="type">{{ post.subcategory }}</a></div>
+              <h3 class="title media-heading">{{ post.title }}</h3>
+              
+              <!-- Meta details mobile -->
+              <ul class="inline meta muted visible-phone">
+                <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> {{ post.created }}</li>
+                <li><i class="icon-user"></i> <a href="#">{{ post.author }}</a></li>
+              </ul>
+              {% if post.photo %}
+              <div class="media-object"> <img src="img/blog/water-pump.jpg" alt="Picture of frog by Ben Fredericson" /> </div>
+              {% endif %}
+              {% if post.link %}
+              <p class="lead">Learn more at <a href="{{ post.link }}">{{ post.link }}</a></p>
+              {% endif %}
+              <p>{{ post.body }}</p>
+              {% if post.tagline %}
+              <p>{{ post.tagline }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        
+        <!--Comments-->
+        <div class="comments" id="comments">
+          <h3>Comments</h3>
+          <ul class="media-list">
+            {% if post.comments %}
+            {% for comment in post.comments %}
+            <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/deniro.jpg" alt="Picture of Erin" class="media-object img-polaroid" /> </a>
+              <div class="span11 media-body">
+                <ul class="inline meta muted">
+                  <li><i class="icon-calendar"></i> <span class="visible-desktop">Created:</span> {{ comment.created }}</li>
+                  <li><i class="icon-user"></i> <span class="visible-desktop">By</span> <a href="#">{{ comment.author }}</a></li>
+                </ul>
+                <h5 class="media-heading">{{ comment.heading }}</h5>
+                <p>{{ comment.body }}</p>
+              </div>
+            </li>
+            {% endfor %}
+            {% endif %}
+          </ul>
+          <div class="comment-form">
+            <form id="comment-form">
+              <fieldset>
+                <legend>Add Comment</legend>
+                <input type="text" class="input-block-level" placeholder="Name">
+                <br />
+                <input type="text" class="input-block-level" placeholder="Email">
+                <br />
+                <textarea rows="8" class="input-block-level" placeholder="Comment"></textarea>
+                <label class="checkbox">
+                  <input type="checkbox">
+                  Subscribe to updates </label>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!--Sidebar-->
+      <div class="span3 sidebar sidebar-right">
+        <div class="inner">
+          <div class="block">
+            <div class="input-append">
+              <input class="span2" id="appendedInputButton" type="text" placeholder="Search">
+              <button class="btn" type="button">Go!</button>
+            </div>
+          </div>
+          <div class="block">
+            <h4 class="title-divider"><span>Tags</span></h4>
+            <div class="tag-cloud">
+              {% for tag in post.tags.all %}
+              <span><a href="#">{{ tag.name }}</a></span>
+              {$ endfor %}
+            </div>
+          </div>
+          <div class="block">
+            <h4 class="title-divider"><span>Popular</span></h4>
+            <ul class="big-list tags">
+              <li><a href="#">Title 1</a> (100+ Views)</li>
+              <li><a href="#">Title 2</a> (100+ Views)</li>
+              <li><a href="#">Title 3</a> (100+ Views)</li>
+            </ul>
+          </div>
+          <div class="block"> <a href="#" class="btn btn-warning"><i class="icon-rss"></i> Subscribe via RSS feed</a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

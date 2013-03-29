@@ -7,15 +7,20 @@ urlpatterns = patterns('',
     # Default url
     url(r'^$', 'home.views.home_view.index', name='home'),
     url(r'^about', 'home.views.about_view.about', name='about'),
-    url(r'^team', 'accounts.views.team_view.team', name='team'),
+    url(r'^team', 'home.views.team_view.team', name='team'),
     #url(r'^terms', 'articles.views.terms_view', name='terms'),
     #url(r'^privacy', 'articles.views.privacy_view', name='privacy'),
     #url(r'^contact', 'articles.views.contact_view', name='contact'),
 
     # Site tutorial info    
-    url(r'^tutorial/build', 'articles.views.tutorial_build_view.article', name='tut-build'),
-    url(r'^tutorial/campaign', 'articles.views.tutorial_campaign_view.article', name='tut-campaign'),
-    url(r'^tutorial/advanced', 'articles.views.tutorial_advanced_view.article', name='tut-advanced'),
+    url(r'^tutorial/build', 'home.views.tutorial_build_view.article', name='tut-build'),
+    url(r'^tutorial/campaign', 'home.views.tutorial_campaign_view.article', name='tut-campaign'),
+    url(r'^tutorial/advanced', 'home.views.tutorial_advanced_view.article', name='tut-advanced'),
+
+    # Blogs and Event info
+    url(r'^blog', 'blogs.views.blog_view', name='blog'),
+    # TODO: capture payment url string
+    url(r'^blog/(?P<post_id>\d+)', 'blogs.views.post_view.post', name='blog-post'),
 
     # Learning resources
     url(r'^learn', 'plans.views.plan_view.plan', name='learn'),
@@ -28,7 +33,6 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^grappelli/', include('grappelli.urls')),
 
-    
 )
 
 """
@@ -50,11 +54,6 @@ urlpatterns = patterns('',
     url(r'^campaign/(?P<campaign_id>\d+)/support', 'campaigns.views.campaign_support_view', name='campaign-support'),
     # url(r'^campaign/(?P<campaign_id>\d+)/projects', 'projects.views.project_list_view', name='project-list'),
     # url(r'^campaign/(?P<campaign_id>\d+)/projects/(?P<project_id>\d+)', 'projects.views.project_detail_view', name='project-detail'),
-
-    # Blogs and Event info
-    url(r'^blog', 'blogs.views.blog_view', name='blog'),
-    # TODO: capture payment url string
-    url(r'^blog/(?P<post_id>\d+)', 'blogs.views.post_view', name='blog-post'),
 
     # Payment history for registered users
     url(r'^account/(?P<account_id>\d+)/payments', 'transactions.views.history_view', name='payment-history'),
