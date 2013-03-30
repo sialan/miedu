@@ -41,7 +41,7 @@ class Account(AbstractUser):
     marital_status = models.CharField(max_length=1, default='S', choices=RELATIONSHIP_CHOICES)
     kids = models.IntegerField(default=0)
 
-    dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
+    dp = FileBrowseField("Image", max_length=200, extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
 
     educations = models.ManyToManyField('accounts.Organization', through='Education', related_name='mi_education')
     experiences = models.ManyToManyField('accounts.Organization', through='Experience', related_name='mi_experience')

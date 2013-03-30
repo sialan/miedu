@@ -34,7 +34,7 @@ class Plan(models.Model):
     category = models.CharField(max_length=2, default='C', choices=CATEGORY_CHOICES)
     subcategory = models.CharField(max_length=2, default='C', choices=SUBCATEGORY_CHOICES)
     title = models.CharField(max_length=50)
-    plan_dp = FileBrowseField("Image", max_length=200, directory="dp_images/", extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
+    plan_dp = FileBrowseField("Image", max_length=200, extensions=[".jpg", ".png", ".gif"], blank=True, null=True)
     description = models.TextField()
     goal = models.TextField()
     level = models.CharField(max_length=2, default='B', choices=LEVEL_CHOICES)
