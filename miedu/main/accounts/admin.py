@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib import admin
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import User, Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 
@@ -206,9 +206,12 @@ class AccountAdmin(UserAdmin):
     )
 
     list_display = UserAdmin.list_display + ('date_of_birth',)
+
     class Media:
-        js = ('js/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
+        js = ('grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
+        
 # Now register the new UserAdmin...
 admin.site.unregister(Group)
+admin.site.unregister(User)
 admin.site.register(Organization)
 admin.site.register(Account, AccountAdmin)

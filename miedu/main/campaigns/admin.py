@@ -15,7 +15,7 @@ class CampaignMilestoneInline(admin.StackedInline):
             'classes': ('collapse',),
             'fields': (
                 ('subheading', 'media'),
-                ('caption',
+                'caption',
                 'body',
                 ('milestone_date', 'completed'),
             )                
@@ -105,5 +105,8 @@ class CampaignAdmin(admin.ModelAdmin):
         ),
     )
     list_display = ('account', 'active', 'amount_pledged', 'goal', 'created_on',)
+
+    class Media:
+        js = ('grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
 
 admin.site.register(Campaign, CampaignAdmin)

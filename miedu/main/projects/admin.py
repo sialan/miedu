@@ -62,4 +62,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
     list_display = ('campaign', 'title', 'main', 'created_on',)
 
+    class Media:
+        js = ('grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
+
 admin.site.register(Project, ProjectAdmin)

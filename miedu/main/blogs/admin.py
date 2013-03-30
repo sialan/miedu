@@ -37,4 +37,7 @@ class PostAdmin(admin.ModelAdmin):
         ),
     )
 
+    class Media:
+        js = ('grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
+
 admin.site.register(Post, PostAdmin)

@@ -44,5 +44,7 @@ class ArticleAdmin(admin.ModelAdmin):
         ),
     )
     list_display = ('title', 'created_on', 'last_edited', 'heading',)
+    class Media:
+        js = ('grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', 'js/libs/tiny_mce/tinymce_setup.js',)
 
 admin.site.register(Article, ArticleAdmin)
