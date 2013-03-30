@@ -212,6 +212,5 @@ class AccountAdmin(UserAdmin):
         
 # Now register the new UserAdmin...
 admin.site.unregister(Group)
-admin.site.unregister(User)
 admin.site.register(Organization)
 admin.site.register(Account, AccountAdmin)
