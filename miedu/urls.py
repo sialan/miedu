@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.views.generic import TemplateView
 from django.contrib import admin
 from filebrowser.sites import site
 
@@ -7,16 +8,16 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Default url
     url(r'^$', 'home.views.home_view.index', name='home'),
-    url(r'^about', 'home.views.about_view.about', name='about'),
-    url(r'^team', 'home.views.team_view.team', name='team'),
+    url(r'^about', TemplateView.as_view(template_name="about.html"), name='about'),
+    url(r'^team', TemplateView.as_view(template_name="team.html"), name='team'),
     #url(r'^terms', 'articles.views.terms_view', name='terms'),
     #url(r'^privacy', 'articles.views.privacy_view', name='privacy'),
     #url(r'^contact', 'articles.views.contact_view', name='contact'),
 
     # Site tutorial info    
-    url(r'^tutorial/build', 'articles.views.tutorial_build_view.article', name='tut-build'),
-    url(r'^tutorial/campaign', 'articles.views.tutorial_campaign_view.article', name='tut-campaign'),
-    url(r'^tutorial/advanced', 'articles.views.tutorial_advanced_view.article', name='tut-advanced'),
+    url(r'^tutorial/build', TemplateView.as_view(template_name="build.html"), name='tut-build'),
+    url(r'^tutorial/campaign', TemplateView.as_view(template_name="run.html"), name='tut-campaign'),
+    url(r'^tutorial/advanced', TemplateView.as_view(template_name="advanced.html"), name='tut-advanced'),
 
     # Blogs and Event info
     url(r'^blog', 'blogs.views.blog_view', name='blog'),
