@@ -6,7 +6,8 @@
 <div id="content">
   <div class="container"> 
     <!-- Sign Up form -->
-    <form class="form-login form-wrapper form-medium">
+    <form class="form-login form-wrapper form-medium" method="post" action=".">
+      {% csrf_token %}
       <h3 class="title-divider"><span>Sign Up</span></h3>
       <h5>Account Information</h5>
 
@@ -16,7 +17,6 @@
         {{ field }}
       </div>
       {% endfor %}
-      <input type="text" class="input-block-level" placeholder="First name">
 
       <label class="checkbox">
         <input type="checkbox" value="term">

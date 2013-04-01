@@ -147,7 +147,7 @@ class UserCreationForm(forms.ModelForm):
 
     class Meta:
         model = Account
-        fields = ('first_name', 'last_name', 'email', 'password',)
+        fields = ('first_name', 'last_name', 'email',)
         widgets = { 'name': forms.TextInput(attrs={'class': "input-block-level"})}
 
     def clean_password2(self):
@@ -162,9 +162,9 @@ class UserCreationForm(forms.ModelForm):
         # Save the provided password in hashed format
         user = super(UserCreationForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        if commit:
-            user.username = user.email
-            user.save()
+            if commit:
+                user.username = user.email
+                user.save()
         return user
 
 

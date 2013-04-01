@@ -1,10 +1,11 @@
 from django import forms
 from accounts.admin import UserCreationForm
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render
 from accounts.models import Account
+from django.views.decorators.csrf import csrf_protect
 
-
+@csrf_protect
 def registration(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -13,6 +14,5 @@ def registration(request):
             return HttpResponseRedirect(reverse('home'))
     else:
         form = UserCreationForm()
-        return render_to_response("signup.html", {
-            'form': form,
-        })
+        context = {"form": form}
+        return render(request, "signup.html", context)
