@@ -1,5 +1,5 @@
 {% extends "temp_base.html" %}
-
+{% load extras %}
 {% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
 
 {% block content %}
@@ -8,391 +8,737 @@
     
     <!--Row 2-->
     <h3 class="title-divider"><span>Discover Immigrants</span></h3>
-      <!--Row 1--> 
-      <div class="row-fluid pricing-stack wrapper">
       
       {% if blueprint_list %}
-          {% for blueprint in blueprint_list %}
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          {% endfor %}
-          {% else %}
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project idkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkfkdkfjdifdjfadslij dkfd ladsfk jdkfkd jt sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3 item">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project ikdddddddddddkdkdkdkdddddddddddddddddddddddddddddddddddddddddlllllllldddddt sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          {% endif %}  
-      
-
+      {% for blueprint in blueprint_list %}
+      {% if forloop.counter == 1 or forloop.counter0|divisibleby:"4" %}
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3">
+          <div class="well active">
+            <h3 class="title"><img src="{{ multimedia.0.resource.url }}" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">${{ blueprint.counter }}</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>{{ blueprint.title }}</h6>
+                <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>{{ blueprint.description|truncatewords:34 }}</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: {{ amount_pledged|percentage_of:goal|default:'0%' }}"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+              <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <a href="{% url 'campaign' %}" class="btn btn-primary">Details</a>
+          </div>  
+        </div>
       </div>
+      {% else %}
+      <div class="span3">
+        <div class="well active">
+          <h3 class="title"><img src="{{ multimedia.0.resource.url }}" alt="Jimi" /></h3>
+          <p class="price">
+            <span class="term">Funding Goal: <span class="digits">${{ blueprint.counter }}</span></span>
+          </p>
+          <ul class="unstyled points">
+            <li>
+              <h6>{{ blueprint.title }}</h6>
+              <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age 30)</span>
+            </li>
+            <li>
+              <p>{{ blueprint.description|truncatewords:34 }}</p>
+              <span><strong>Location: </strong>Canada</span>
+            </li>
+          </ul>
+          <div class="progress progress-warning progress-striped">
+            <div class="bar" style="width: {{ amount_pledged|percentage_of:goal|default:'0%' }}"></div>
+          </div>
+          <p class="progress-descriptor hidden-tablet">
+            <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+            <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+          </p>
+          <p class="progress-descriptor visible-tablet">
+            <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+          </p>
+          <p class="progress-descriptor visible-tablet">
+            <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+          </p>
+          <a href="{% url 'campaign' %}" class="btn btn-primary">Details</a>
+        </div>  
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% else %}
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+        <div class="span3 item">
+          <div class="well active">
+            <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+            <p class="price">
+              <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>title here</h6>
+                <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
+              </li>
+              <li>
+                <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: 40%"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>$20000</span>
+              <span class="pull-right"><em>Days Left: </em>71</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>$2000</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class=""><em>Days Left: </em>71</span>
+            </p>
+            <a class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      {% endif %}  
 
     <div class="pagination pull-center">
       <ul>
@@ -411,7 +757,7 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ STATIC_URL }}js/scripts/script.js"></script>
+<script src="{{ STATIC_URL }}js/libs/masonry/jquery.isotope.min.js"></script>
 $(document).ready(function() {
   $('#wrapper').isotope({
     // options
