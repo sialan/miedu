@@ -14,7 +14,7 @@ def login(request):
         # Correct password, and the user is marked "active"
         auth.login(request, user)
         # Redirect to a success page.
-        return HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('campaign-list'))
     else:
         # Show an error page
         return HttpResponseRedirect(reverse('registration'))

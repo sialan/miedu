@@ -38,6 +38,9 @@ urlpatterns = patterns('',
 
     # Campaigns
     url(r'^campaign/browse/$', 'campaigns.views.campaign_list_view.campaigns', name='campaign-list'),
+    #url(r'^campaign/new', 'campaigns.views.campaign_new_view', name='campaign-new'),
+    #url(r'^campaign/(?P<campaign_id>\d+)', 'campaigns.views.campaign_detail_view', name='campaign-detail'),
+    #url(r'^campaign/(?P<campaign_id>\d+)/edit', 'campaigns.views.campaign_edit_view', name='campaign-edit'),
 
     # Enabling the admin and accompanying documentation:
     url(r'^admin/', include(admin.site.urls)),
@@ -54,13 +57,8 @@ urlpatterns = patterns('',
 
 
     url(r'^account/(?P<account_id>\d+)/edit', 'accounts.views.profile_view', name='profile'),
-
     
     #url(r'^campaign/browse$', 'campaigns.views.campaign_list_walkthrough_view', name='campaign-list-walkthrough'),
-    url(r'^campaign/new', 'campaigns.views.campaign_new_view', name='campaign-new'),
-    url(r'^campaign/(?P<campaign_id>\d+)', 'campaigns.views.campaign_detail_view', name='campaign-detail'),
-    url(r'^campaign/(?P<campaign_id>\d+)/edit', 'campaigns.views.campaign_edit_view', name='campaign-edit'),
-    url(r'^campaign/(?P<campaign_id>\d+)/support', 'campaigns.views.campaign_support_view', name='campaign-support'),
     # url(r'^campaign/(?P<campaign_id>\d+)/projects', 'projects.views.project_list_view', name='project-list'),
     # url(r'^campaign/(?P<campaign_id>\d+)/projects/(?P<project_id>\d+)', 'projects.views.project_detail_view', name='project-detail'),
 
