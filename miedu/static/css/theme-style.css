@@ -933,6 +933,33 @@ a:focus {
 #footer .container {
   position: relative;
 }
+.scrolltop {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: none;
+  font-size: 0;
+  background: #343331;
+  z-index: 999999;
+  text-align: center;
+  color: #ffffff;
+}
+.scrolltop:hover {
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.scrolltop:before {
+  content: "\f106";
+  font-family: 'FontAwesome';
+  font-size: 30px;
+  font-style: normal;
+}
 .social-media a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
