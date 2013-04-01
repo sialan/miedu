@@ -8,11 +8,12 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Default url
      url(r'^$', 'home.views.home_view.index', name='home'),
-    url(r'^about', TemplateView.as_view(template_name="about.html"), name='about'),
-    url(r'^team', TemplateView.as_view(template_name="team.html"), name='team'),
-    #url(r'^terms', 'articles.views.terms_view', name='terms'),
-    #url(r'^privacy', 'articles.views.privacy_view', name='privacy'),
-    #url(r'^contact', 'articles.views.contact_view', name='contact'),
+    url(r'^about/$', TemplateView.as_view(template_name="about.html"), name='about'),
+    url(r'^team/$', TemplateView.as_view(template_name="team.html"), name='team'),
+    url(r'^terms/$', TemplateView.as_view(template_name="terms.html"), name='terms'),
+    url(r'^contact/$', TemplateView.as_view(template_name="contact.html"), name='contact'),
+
+    url(r'^tutorial/$', TemplateView.as_view(template_name="tutorial.html"), name='tutorial'),
 
     # Site tutorial info    
     url(r'^tutorial/build', TemplateView.as_view(template_name="build.html"), name='tut-build'),

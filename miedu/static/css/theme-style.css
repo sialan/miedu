@@ -836,6 +836,10 @@ a:focus {
 #navigation span.dropdown-menu form .btn.login {
   width: 60px;
 }
+#navigation div.dropdown-menu form .btn.logout,
+#navigation span.dropdown-menu form .btn.logout {
+  width: 100%;
+}
 #navigation div.dropdown-menu .divider,
 #navigation span.dropdown-menu .divider {
   display: block;
