@@ -119,4 +119,7 @@ $(document).ready(function() {
     e.preventDefault();
   });
   
+  //initialise Stellar.js
+  $(window).stellar();
+  
 });
