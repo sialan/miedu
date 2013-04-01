@@ -7,7 +7,7 @@
   <div class="container">
     
     <!--Row 2-->
-    <h3 class="title-divider"><span>Discover Immigrants</span></h3>
+    <h3 class="title-divider"><span>Discover Blueprints</span></h3>
       
       {% if blueprint_list %}
       {% for blueprint in blueprint_list %}
@@ -742,13 +742,16 @@
 
     <div class="pagination pull-center">
       <ul>
-        <li><a href="#">Prev</a></li>
-        <li class="active"><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li><a href="#">Next</a></li>
+        {% if contacts.has_previous %}
+        <li><a href="?page={{ context.previous_page_number }}">Prev</a></li>
+        {% endif %}
+        <!--<li class="active"><a href="#">1</a></li>-->
+        <span class="current">
+          Page {{ context.number }} of {{ context.paginator.num_pages }}.
+        </span>
+        {% if contacts.has_next %}
+        <li><a href="?page={{ contacts.next_page_number }}">Next</a></li>
+        {% endif %}
       </ul>
     </div>
 
