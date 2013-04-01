@@ -1,4 +1,5 @@
 from django import forms
+from django.core.urlresolvers import reverse
 from accounts.admin import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render

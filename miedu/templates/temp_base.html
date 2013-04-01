@@ -97,17 +97,17 @@
         
         <!--user menu-->
         <ul class="nav user-menu pull-right">
-          <li><a href="#" class="btn btn-primary signup">Sign Up</a></li>
+          <li><a href="{% url 'registration' %}" class="btn btn-primary signup">Sign Up</a></li>
           <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Login</a>
             <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-              <form action="#" class="form-inline" id="login-form-drop" role="menuitem">
+              <form action="{% url 'login' %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
                 <div class="input-append">
-                  <input type="text" class="input-small email" placeholder="Email">
-                  <input type="password" class="input-small password" placeholder="Password">
+                  <input type="text" class="input-small email" placeholder="Email" name="username" id="username" value="">
+                  <input type="password" class="input-small password" placeholder="Password" name="password" id="password" value="">
                   <input type="button" class="btn btn-primary login" value="Login">
                 </div>
               </form>
-              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="#" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
+              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="{% url 'registration' %}" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
           </li>
         </ul>
         

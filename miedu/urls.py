@@ -32,7 +32,7 @@ urlpatterns = patterns('',
 
     # Accounts info pages and registration
     url(r'^registration', 'accounts.views.registration_view.registration', name='registration'),
-    #url(r'^login', 'accounts.views.login_view.login', name='login'),
+    url(r'^login', 'accounts.views.login_view.login', name='login'),
     #url(r'^account/(?P<account_id>\d+)', 'accounts.views.account_view.profile', name='account'),
 
     # Enabling the admin and accompanying documentation:
