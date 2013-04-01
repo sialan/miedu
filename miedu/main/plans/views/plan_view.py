@@ -5,4 +5,4 @@ def plan(request):
     article_data_list = Article.objects.filter(main=False).order_by('title')
     context = {'article_data_list': article_data_list}
     
-    return render(request, 'templates/learn.html', context)
+    return render(request, 'learn.html', context)

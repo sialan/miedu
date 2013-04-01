@@ -100,6 +100,7 @@ TEMPLATE_DIRS = (
     'miedu/main/home/templates',
     'miedu/main/accounts/templates',
     'miedu/main/articles/templates',
+    'miedu/main/campaigns/templates',
     'miedu/main/plans/templates',
 )
 
