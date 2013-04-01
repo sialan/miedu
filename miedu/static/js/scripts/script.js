@@ -20,6 +20,22 @@ $(document).ready(function() {
     trigger: "hover"
   });
   
+  //Scroll Top link
+  $(window).scroll(function(){
+    if ($(this).scrollTop() > 100) {
+      $('.scrolltop').fadeIn();
+    } else {
+      $('.scrolltop').fadeOut();
+    }
+  });
+ 
+  $('.scrolltop').click(function(){
+    $("html, body").animate({
+      scrollTop: 0
+    }, 600);
+    return false;
+  });  
+
   //show hide elements
   $('.show-hide').each(function() {
     $(this).click(function() {
