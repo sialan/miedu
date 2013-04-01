@@ -889,10 +889,16 @@ a:focus {
   background: #e6e6e6;
 }
 #footer {
+  /*
   background: #333333;
   padding: 20px 0;
   color: rgba(255, 255, 255, 0.6);
   border-top: 2px solid #55a79a;
+  */
+  min-height: 400px;
+  padding: 60px 0;
+  background: #1a1a1a url(../img/bg_footer-map.png) top center no-repeat;
+  color: #6b7175;
 }
 #footer h3 {
   font-size: 1.2em;

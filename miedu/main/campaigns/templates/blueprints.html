@@ -755,14 +755,3 @@
   </div>
 </div>
 {% endblock %}
-
-{% block scripts %}
-<script src="{{ STATIC_URL }}js/libs/masonry/jquery.isotope.min.js"></script>
-$(document).ready(function() {
-  $('#wrapper').isotope({
-    // options
-    itemSelector : '.item',
-    layoutMode : 'fitRows'
-  });
-});
-{% endblock %}
