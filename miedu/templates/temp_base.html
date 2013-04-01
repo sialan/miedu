@@ -96,20 +96,37 @@
         <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
         
         <!--user menu-->
+        {% if user.is_authenticated %}
+        <ul class="nav user-menu pull-right">
+          <li><a href="#" class="btn btn-primary signup">My Blueprints</a></li>
+          <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">My Account</a>
+            <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
+              <form action="#" method="post" class="form-inline" id="login-form-drop" role="menuitem">
+                {% csrf_token %}
+                <div class="input-append">
+                  <input type="submit" class="btn btn-primary login" value="Logout">
+                </div>
+              </form>
+            </div>
+          </li>
+        </ul>
+        {% else %}
         <ul class="nav user-menu pull-right">
           <li><a href="{% url 'registration' %}" class="btn btn-primary signup">Sign Up</a></li>
           <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">Login</a>
             <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
               <form action="{% url 'login' %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
+                {% csrf_token %}
                 <div class="input-append">
                   <input type="text" class="input-small email" placeholder="Email" name="username" id="username" value="">
                   <input type="password" class="input-small password" placeholder="Password" name="password" id="password" value="">
-                  <input type="button" class="btn btn-primary login" value="Login">
+                  <input type="submit" class="btn btn-primary login" value="Login">
                 </div>
               </form>
               <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="{% url 'registration' %}" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
           </li>
         </ul>
+        {% endif %}
         
         <!--everything within this div is collapsed on mobile-->
         <div class="nav-collapse collapse"> 
