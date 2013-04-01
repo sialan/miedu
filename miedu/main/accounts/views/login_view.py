@@ -18,16 +18,4 @@ def login(request):
     else:
         # Show an error page
         return HttpResponseRedirect(reverse('registration'))
-
-
-@csrf_protect
-def registration(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            new_user = form.save()
-            return HttpResponseRedirect(reverse('home'))
-    else:
-        form = UserCreationForm()
-        context = {"form": form}
-        return render(request, "signup.html", context)
+        
