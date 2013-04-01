@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.auth.views import logout
 from django.views.generic import TemplateView
 from django.contrib import admin
 from filebrowser.sites import site
@@ -32,7 +33,8 @@ urlpatterns = patterns('',
 
     # Accounts info pages and registration
     url(r'^registration', 'accounts.views.registration_view.registration', name='registration'),
-    url(r'^login', 'accounts.views.login_view.login', name='login'),
+    url(r'^login/$', 'accounts.views.login_view.login', name='login'),
+    url(r'^accounts/logout/$', 'logout', name='logout'),
     #url(r'^account/(?P<account_id>\d+)', 'accounts.views.account_view.profile', name='account'),
 
     # Enabling the admin and accompanying documentation:

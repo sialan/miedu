@@ -101,7 +101,7 @@
           <li><a href="#" class="btn btn-primary signup">My Blueprints</a></li>
           <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">My Account</a>
             <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-              <form action="#" method="post" class="form-inline" id="login-form-drop" role="menuitem">
+              <form action="{% url 'logout %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
                 {% csrf_token %}
                 <div class="input-append">
                   <input type="submit" class="btn btn-primary login" value="Logout">
