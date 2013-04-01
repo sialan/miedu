@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Default url
-    url(r'^$', 'home.views.home_view.index', name='home'),
+     url(r'^$', 'home.views.home_view.index', name='home'),
     url(r'^about', TemplateView.as_view(template_name="about.html"), name='about'),
     url(r'^team', TemplateView.as_view(template_name="team.html"), name='team'),
     #url(r'^terms', 'articles.views.terms_view', name='terms'),
@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^tutorial/advanced', TemplateView.as_view(template_name="advanced.html"), name='tut-advanced'),
 
     # Blogs and Event info
-    url(r'^blog', 'blogs.views.blog_view', name='blog'),
+    #url(r'^blog', 'blogs.views.blog_view.blog', name='blog'),
     # TODO: capture payment url string
     url(r'^blog/(?P<post_id>\d+)', 'blogs.views.post_view.post', name='blog-post'),
 
@@ -29,6 +29,11 @@ urlpatterns = patterns('',
     url(r'^learn/(?P<article_id>\d+)', 'articles.views.article_view.article', name='tutorial'),
     #url(r'^learn/(?P<lesson_id>\d+)', 'lessons.views.lesson_view', name='lesson'),
     #url(r'^learn/(?P<lesson_id>\d+)/(?P<article_id>\d+)', 'articles.views.article_view', name='tutorial'),
+
+    # Accounts info pages and registration
+    url(r'^registration', 'accounts.views.registration_view.registration', name='registration'),
+    #url(r'^login', 'accounts.views.login_view.login', name='login'),
+    #url(r'^account/(?P<account_id>\d+)', 'accounts.views.account_view.profile', name='account'),
 
     # Enabling the admin and accompanying documentation:
     url(r'^admin/', include(admin.site.urls)),
@@ -43,10 +48,7 @@ urlpatterns = patterns('',
 # Create your views here.
 # Basic contact info and static corporate info
 
-    # Accounts info pages and registration
-	url(r'^registration', 'accounts.views.registration_view', name='registration'),
-    url(r'^login', 'accounts.views.login_view', name='login'),
-    url(r'^account/(?P<account_id>\d+)', 'accounts.views.account_view', name='account'),
+
     url(r'^account/(?P<account_id>\d+)/edit', 'accounts.views.profile_view', name='profile'),
 
     # Campaigns
@@ -64,3 +66,4 @@ urlpatterns = patterns('',
     # TODO: capture payment url string
     url(r'^account/(?P<account_id>\d+)/payments/(?P<transaction_id>\d+)', 'transactions.views.payment_view', name='payment'),
 """
+    

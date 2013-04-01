@@ -60,8 +60,8 @@ class Account(AbstractUser):
 
     industry = models.CharField(max_length=4, default='O', choices=INDUSTRY_CHOICES)
     function = models.CharField(max_length=4, default='O', choices=FUNCTION_CHOICES)
-    objective = models.TextField()
-    headline = models.TextField()
+    objective = models.TextField(default="Put your educational or career goal here!")
+    headline = models.TextField(default="Tell us a little bit about yourself!")
     unread = models.IntegerField(blank=True, null=True)
 
     supporters = models.ManyToManyField('self', through='Supporter', symmetrical=False, blank=True, null=True)

@@ -139,12 +139,17 @@ class TransactionInline(admin.TabularInline):
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    first_name = forms.CharField(label='FirstName', widget=forms.TextInput(attrs={'placeholder':'First Name'}))
+    last_name = forms.CharField(label='Last Name', widget=forms.TextInput(attrs={'placeholder':'Last Name'}))
+    email = forms.CharField(label='Email/Username', widget=forms.TextInput(attrs={'placeholder':'Username/Email'}))
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
+    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput(attrs={'placeholder':'Confirm Password'}))
 
     class Meta:
         model = Account
-        fields = ('email', 'username')
+        widgets = {
+            'name': forms.TextInput(attrs={'class': "input-block-level", 'placeholder': }),
+        }
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -159,6 +164,7 @@ class UserCreationForm(forms.ModelForm):
         user = super(UserCreationForm, self).save(commit=False)
         user.set_password(self.cleaned_data["password1"])
         if commit:
+            user.username = user.email
             user.save()
         return user
 

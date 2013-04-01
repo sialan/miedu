@@ -1,0 +1,28 @@
+{% extends "temp_base.html" %}
+
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container"> 
+    <!-- Sign Up form -->
+    <form class="form-login form-wrapper form-medium">
+      <h3 class="title-divider"><span>Sign Up</span></h3>
+      <h5>Account Information</h5>
+
+      {% for field in form %}
+      <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field }}
+      </div>
+      {% endfor %}
+      <input type="text" class="input-block-level" placeholder="First name">
+
+      <label class="checkbox">
+        <input type="checkbox" value="term">
+        I agree with the Terms and Conditions. </label>
+      <button class="btn btn-primary" type="submit">Sign up</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

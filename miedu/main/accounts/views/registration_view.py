@@ -1,7 +1,18 @@
-from django.shortcuts import render
+from django import forms
+from accounts.admin import UserCreationForm
+from django.http import HttpResponseRedirect
+from django.shortcuts import render_to_response, render
 from accounts.models import Account
 
+
 def registration(request):
-    team_data_model = Article.objects.all(is_staff=True).order_by('first_name')
-    context = {'about_data_list': about_data_list}
-    return render(request, 'templates/team.html', context)
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            new_user = form.save()
+            return HttpResponseRedirect(reverse('home'))
+    else:
+        form = UserCreationForm()
+        return render_to_response("signup.html", {
+            'form': form,
+        })

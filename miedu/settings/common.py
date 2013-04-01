@@ -97,10 +97,10 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     'miedu/templates',
-    'miedu/main/home',
-    'miedu/main/accounts',
-    'miedu/main/articles',
-    'miedu/main/plans',
+    'miedu/main/home/templates',
+    'miedu/main/accounts/templates',
+    'miedu/main/articles/templates',
+    'miedu/main/plans/templates',
 )
 
 INSTALLED_APPS = (
