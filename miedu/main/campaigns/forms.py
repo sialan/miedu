@@ -1,4 +1,5 @@
 from django import forms
+from taggit.forms import *
 from campaigns.models import Campaign
 
 class CampaignCreationForm(forms.ModelForm):
@@ -12,20 +13,17 @@ class CampaignCreationForm(forms.ModelForm):
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Current city...'}))
     country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Current country...'}))
 
-    start_date = forms.DateTimeField(Label='Start Date', widget=forms.TextInput(attrs={'readonly':'readonly'}))
-    # end_date uipicker
+    end_date = forms.DateTimeField(widget=forms.TextInput(attrs={'placeholder':'Pick a closing date...'})))
 
     minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.TextInput(attrs={'placeholder':'Minimum amount of support...'}))
     goal = forms.IntegerField(label='Funding Goal', widget=forms.TextInput(attrs={'placeholder':'Total funding goal...'}))
 
 
     #multimedia upload    
-
     headline = forms.CharField(label='Main Heading', widget=forms.TextInput(attrs={'placeholder':'Main heading...'}))
     # description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-    
     call_to_action = forms.CharField(label='Call to Action', widget=forms.TextInput(attrs={'placeholder':'Draw in support...'}))
-    #tags addinplaceholdertext
+    tags = TagField(widget=forms.TextInput(attrs={'placeholder':'tech, html5, social'}))
     #summary = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
 
 
@@ -34,7 +32,7 @@ class CampaignCreationForm(forms.ModelForm):
 
     class Meta:
         model = Campaign
-        exclude = ('backers', 'active', 'completed', 'completed', 'consummated', 'currently_featured', 'feature_score', 'caption', 'number_backers', 'amount_pledged', 'completion_date', 'state', 'endline',)
+        exclude = ('backers', 'active', 'completed', 'completed', 'consummated', 'currently_featured', 'feature_score', 'caption', 'number_backers', 'amount_pledged', 'completion_date', 'state', 'endline', 'multimedia', 'start_date',)
 
     def save(self, commit=True):
         # convert dates to datetime

@@ -12,6 +12,7 @@ def campaign(request):
         form = CampaignCreationForm(request.POST)
         if form.is_valid():
             new_campaign = form.save()
+            form.save_m2m()
             return HttpResponseRedirect(reverse('campaign-list'))
     else:
         form = CampaignCreationForm()
