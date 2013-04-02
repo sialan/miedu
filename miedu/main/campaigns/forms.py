@@ -2,17 +2,12 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django import forms
 from campaigns.models import Campaign
 
-class UserCreationForm(forms.ModelForm):
+class CampaignCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    first_name = forms.CharField(label='FirstName', widget=forms.TextInput(attrs={'placeholder':'First Name'}))
-    last_name = forms.CharField(label='Last Name', widget=forms.TextInput(attrs={'placeholder':'Last Name'}))
-    email = forms.CharField(label='Email/Username', widget=forms.TextInput(attrs={'placeholder':'Username/Email'}))
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder':'Password'}))
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput(attrs={'placeholder':'Confirm Password'}))
-
+    
     class Meta:
-        model = Account
+        model = Campaign
         fields = ('first_name', 'last_name', 'email',)
         widgets = { 'name': forms.TextInput(attrs={'class': "input-block-level"})}
 
@@ -34,18 +29,7 @@ class UserCreationForm(forms.ModelForm):
         return user
 
 
-class UserChangeForm(forms.ModelForm):
-    """A form for updating users. Includes all the fields on
-    the user, but replaces the password field with admin's
-    password hash display field.
-    """
-    password = ReadOnlyPasswordHashField()
+class CampaignChangeForm(forms.ModelForm):
 
     class Meta:
-        model = Account
-
-    def clean_password(self):
-        # Regardless of what the user provides, return the initial value.
-        # This is done here, rather than on the field, because the
-        # field does not have access to the initial value
-        return self.initial["password"]
+        model = Campaign
