@@ -5,7 +5,7 @@ from filebrowser.fields import FileBrowseField
 
 # Create your models here.
 class Multimedia(models.Model):
-    
+    # TODO: Add category campaigns
     organization = models.ForeignKey('accounts.Organization', null=True, blank=True)
     owner = models.CharField(max_length=50, null=True, blank=True)
     owner_url = models.CharField(max_length=200, null=True, blank=True)
@@ -24,6 +24,9 @@ class Multimedia(models.Model):
     caption_overlay = models.CharField(max_length=200, null=True, blank=True)
 
     tags = TaggableManager()
+
+    def __unicode__(self):
+        return u'%s' % (self.title)
 
 class MultimediaComment(models.Model):
     created = models.DateTimeField(auto_now_add=True)

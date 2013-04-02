@@ -68,7 +68,7 @@ class Account(AbstractUser):
     purchases = models.ManyToManyField('campaigns.Campaign', through='transactions.Transaction', related_name='purchase', blank=True, null=True)
 
     def __unicode__(self):
-        return u'%s' % (self.first_name + self.last_name)
+        return u'%s' % (self.first_name + ' ' + self.last_name)
 
 class OrganizationManager(models.Manager):
     """

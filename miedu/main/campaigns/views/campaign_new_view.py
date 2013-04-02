@@ -11,8 +11,8 @@ def campaign(request):
     if request.method == 'POST':
         form = CampaignCreationForm(request.POST)
         if form.is_valid():
-            new_user = form.save()
-            return HttpResponseRedirect(reverse('home'))
+            new_campaign = form.save()
+            return HttpResponseRedirect(reverse('campaign-list'))
     else:
         form = CampaignCreationForm()
         context = {"form": form}
