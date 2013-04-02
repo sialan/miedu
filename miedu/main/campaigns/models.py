@@ -22,7 +22,7 @@ class Campaign(models.Model):
     headline = models.CharField(max_length=50)
     description = models.TextField()
 
-    endline = models.CharField(max_length=50, null=True, blank=True)
+    endline = models.CharField(max_length=50, default="Summary")
     summary = models.TextField(null=True, blank=True)
     call_to_action = models.CharField(max_length=50, null=True, blank=True)
 
