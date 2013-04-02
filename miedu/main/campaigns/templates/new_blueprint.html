@@ -25,28 +25,26 @@
             <div class="tab-content span8">
               <div class="tab-pane active" id="tab1">
                 <h3 class="title visible-phone">Project Info</h3>
-                <!--only show on mobile when tabs are open-->
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+                <form action="/contact/" method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <input type="submit" value="Submit" />
+                </form>
+
               </div>
               <div class="tab-pane" id="tab2">
                 <h3 class="title visible-phone">The Details</h3>
-                <!--only show on mobile when tabs are open-->
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+                
+
               </div>
               <div class="tab-pane" id="tab3">
                 <h3 class="title visible-phone">Milestones</h3>
-                <!--only show on mobile when tabs are open-->
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna.  lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+                
+
               </div></p>
               <div class="tab-pane" id="tab4">
                 <h3 class="title visible-phone">FAQ</h3>
-                <!--only show on mobile when tabs are open-->
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+                
               </div>
               <!--
               <div class="tab-pane" id="tab5"> <img src="img/features/feature-4.png" alt="Feature 4" />
@@ -58,7 +56,7 @@
                 <h3 class="title visible-phone">Submit</h3>
                 <!--only show on mobile when tabs are open-->
                 <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. </p>
+                
               </div>
 
             </div>
