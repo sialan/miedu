@@ -7,19 +7,15 @@ class CampaignCreationForm(forms.ModelForm):
     fields, plus a repeated password."""
     #__init__ set account,city,country
 
-    title = forms.CharField(label='Title', widget=forms.TextInput(attrs={'placeholder':'Title of the blueprint...'}))
-    account = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))
-    
+    account = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))    
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Current city...'}))
     country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Current country...'}))
-
-    end_date = forms.DateTimeField(widget=forms.TextInput(attrs={'placeholder':'Pick a closing date...'})))
-
+    end_date = forms.DateTimeField(widget=forms.TextInput(attrs={'placeholder':'Pick a closing date...'}))
     minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.TextInput(attrs={'placeholder':'Minimum amount of support...'}))
     goal = forms.IntegerField(label='Funding Goal', widget=forms.TextInput(attrs={'placeholder':'Total funding goal...'}))
 
-
-    #multimedia upload    
+    
+    title = forms.CharField(label='Title', widget=forms.TextInput(attrs={'placeholder':'Title of the blueprint...'}))
     headline = forms.CharField(label='Main Heading', widget=forms.TextInput(attrs={'placeholder':'Main heading...'}))
     # description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
     call_to_action = forms.CharField(label='Call to Action', widget=forms.TextInput(attrs={'placeholder':'Draw in support...'}))
@@ -28,7 +24,12 @@ class CampaignCreationForm(forms.ModelForm):
 
 
     #inlineformsetcampaignmilestone
+
+
+
     #inlineformsetcampaignfaqitem
+
+
 
     class Meta:
         model = Campaign

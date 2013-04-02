@@ -81,7 +81,13 @@
 <script src="{{ STATIC_URL }}js/libs/jquery/jquery-ui-1.10.2.custom.min.js"></script>
 <script>
 $(function() {
-    $( "#id_end_date" ).datepicker();
+    $( "#id_end_date" ).datepicker({
+      showButtonPanel: true,
+      showOn: "button",
+      buttonImage: "http://jqueryui.com/demos/datepicker/images/calendar.gif",
+      buttonImageOnly: true
+    });
+
 });
 </script>
 {% endblock %}
