@@ -39,7 +39,7 @@ urlpatterns = patterns('',
     # Campaigns
     url(r'^campaign/browse/$', 'campaigns.views.campaign_list_view.campaigns', name='campaign-list'),
     #url(r'^campaign/new/$', 'campaigns.views.campaign_new_view.campaign', name='campaign-new'),
-    url(r'^campaign/(?P<campaign_id>\d+)/$', 'campaigns.views.campaign_detail_view', name='campaign-detail'),
+    url(r'^campaign/(?P<campaign_id>\d+)/$', 'campaigns.views.campaign_detail_view.blueprint', name='campaign-detail'),
     #url(r'^campaign/(?P<campaign_id>\d+)/edit', 'campaigns.views.campaign_edit_view', name='campaign-edit'),
 
     # Enabling the admin and accompanying documentation:

@@ -22,16 +22,13 @@
         <div class="inner">
           <div class="block">
             <h4 class="title-divider">
-              <div class="date-wrapper">
-                <span class="date-m">{{ article.created_on.month }}</span> <span class="date-d">{{ article.created_on.day }}</span> 
-              </div>
               <span>Info</span>
             </h4>
             <ul class="big-list tags">
-              <li>Created by: <a href="#"><i class="icon-user">{{article.created_by}}</a></li>
-              <li>Last edited: {{ article.last_edited }}</li>
-              <li>Moderators: {% for mod in moderators %}<a href="#">{{ mod.first_name }} {{mod.last_name}}</a>{% endfor %}</li>
-              <li>External link: <a href="{{ article.url }}">Go to external resource</a></li>
+              <li>Created by: <a href="#"><i class="icon-user" />{{article.created_by}}</a></li>
+              <li>Last edited: <small>{{ article.last_edited }}</small></li>
+              <li>Moderators: {% for mod in campaign.moderators.all %}<a href="#">{{ mod.first_name }} {{mod.last_name}}</a>{% endfor %}</li>
+              <li>External link: <a href="{{ article.url }}"><small>Go to external resource</small></a></li>
             </ul>
           </div>
 
@@ -67,9 +64,11 @@
       <div id="resources" class="span9">
         <h2 class="title-divider"><span>Resources<span class="de-em"></span></span> <small>If you need references...</small></h2>
         <ul>
-        {% for resource in article.resources %}
+        {% if article.resources %}
+        {% for resource in article.resources.all %}
         <li><a href="#">{{ resource.title }}</a></li>
         {% endfor %}
+        {% endif %}
         </ul>
       </div>
       <!--comment content-->
@@ -77,8 +76,8 @@
         <h2 class="title-divider"><span>Comments<span class="de-em"></span></span> <small>Be noisy, be loud, be heard...</small></h2>
         <!--Comments-->
         <ul class="media-list">
-        
-          {% for comment in article.articlecomment_set %}
+          {% if article.articlecomment_set %}
+          {% for comment in article.articlecomment_set.all %}
           <li class="media row-fluid"> <a class="span1" href="#"> <img src="{{ comment.author.dp.url }}" alt="Picture of {{ comment.author.first_name }}" class="media-object img-polaroid" /> </a>
             <div class="span11 media-body">
               <ul class="inline meta muted">
@@ -90,6 +89,7 @@
             </div>
           </li>
           {% endfor %}
+          {% endif %}
         </ul>
         <div class="comment-form">
           <form id="comment-form">
