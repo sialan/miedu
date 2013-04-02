@@ -12,7 +12,7 @@ class CampaignCreationForm(forms.ModelForm):
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Current city...'}))
     country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Current country...'}))
 
-    #start_date ui picker default start date
+    start_date = forms.DateTimeField(Label='Start Date', widget=forms.TextInput(attrs={'readonly':'readonly'}))
     # end_date uipicker
 
     minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.TextInput(attrs={'placeholder':'Minimum amount of support...'}))
@@ -37,7 +37,7 @@ class CampaignCreationForm(forms.ModelForm):
         exclude = ('backers', 'active', 'completed', 'completed', 'consummated', 'currently_featured', 'feature_score', 'caption', 'number_backers', 'amount_pledged', 'completion_date', 'state', 'endline',)
 
     def save(self, commit=True):
-        # Save the provided password in hashed format
+        # convert dates to datetime
         blueprint = super(CampaignCreationForm, self).save(commit=False)
         if commit:
             # also save city country to this user
