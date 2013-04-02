@@ -23,7 +23,7 @@
           </div>
           <div class="span11">
             <div class="media-body">
-              <div class="tags"><a href="#" class="tag">{{ post.category }}</a> / <a href="#" class="type">{{ post.subcategory }}</a></div>
+              <div class="tags"><a href="#" class="tag">{{ post.get_category_display }}</a> / <a href="#" class="type">{{ post.get_subcategory_display }}</a></div>
               <h3 class="title media-heading">{{ post.title }}</h3>
               
               <!-- Meta details mobile -->
@@ -37,7 +37,7 @@
               {% if post.link %}
               <p class="lead">Learn more at <a href="{{ post.link }}">{{ post.link }}</a></p>
               {% endif %}
-              <p>{{ post.body }}</p>
+              {% autoescape off %}{{ post.body }}{% endautoescape %}
               {% if post.tagline %}
               <p>{{ post.tagline }}</p>
               {% endif %}
@@ -97,7 +97,7 @@
             <div class="tag-cloud">
               {% for tag in post.tags.all %}
               <span><a href="#">{{ tag.name }}</a></span>
-              {$ endfor %}
+              {% endfor %}
             </div>
           </div>
           <div class="block">

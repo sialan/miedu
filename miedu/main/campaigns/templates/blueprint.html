@@ -85,20 +85,18 @@
     
       </div>
       <!--main content-->
-      <div id="content" class="span9">
-        <h2 class="title-divider"><span>The <span class="de-em">Details</span></span> <small>{{ campaign.headline }}</small></h2>
+      <div class="span9">
+        <h2 id="content" class="title-divider"><span>The <span class="de-em">Details</span></span> <small>{{ campaign.headline }}</small></h2>
         {% autoescape off %}{{ campaign.description }}{% endautoescape %}
-      </div>
-      <!--summary content-->
-      <div id="summary" class="span9">
-        <h2 class="title-divider"><span>{{ campaign.endline }}<span class="de-em"></span></span> <small>In 30 seconds or less...</small></h2>
-        {% autoescape off %}{{ campaign.summary }}{% endautoescape %}
-      </div>
-      <p class="lead">{{ campaign.call_to_action }}</p>
 
-      <!--comment content-->
-      <div id="comments" class="span9">
-        <h2 class="title-divider"><span>Comments<span class="de-em"></span></span> <small>Be noisy, be loud, be heard...</small></h2>
+      <!--summary content-->
+        <h2 id="summary" class="title-divider"><span>{{ campaign.endline }}<span class="de-em"></span></span> <small>In 30 seconds or less...</small></h2>
+        {% autoescape off %}{{ campaign.summary }}{% endautoescape %}
+
+        <p class="lead">{{ campaign.call_to_action }}</p>
+
+        <!--comment content-->
+        <h2 id="comments" class="title-divider"><span>Comments<span class="de-em"></span></span> <small>Be noisy, be loud, be heard...</small></h2>
         <!--Comments-->
         <ul class="media-list">
           {% if campaign.campaigncomment_set %}
