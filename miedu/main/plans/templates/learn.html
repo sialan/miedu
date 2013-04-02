@@ -32,7 +32,9 @@
               {{ article.title }}
             </span>
             <span class="description">
+              {% autoescape off %}
               {{ article.body|truncatewords:30|linebreaks }}
+              {% endautoescape %}
             </span>
           </span>
         </a>

@@ -2199,6 +2199,7 @@ a:hover .icon-inverse-80 {
 /* --------------------------------------------------
  * Showcase
  *-------------------------------------------------- */
+/*
 .tabbable > ul.nav-tabs,
 ul.nav-tabs {
   border-bottom: 1px dashed #BFBFBF;
@@ -2242,6 +2243,7 @@ ul.nav-tabs li.active a:hover {
   background: #6C7175;
   border: none;
 }
+*/
 .showcase .item {
   display: block;
   float: left;
