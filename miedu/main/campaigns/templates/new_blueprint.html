@@ -28,8 +28,7 @@
                 <form action="/contact/" method="post">
                   {% csrf_token %}
                   {{ form.as_p }}
-                  <input type="submit" value="Submit" />
-                </form>
+                  
 
               </div>
               <div class="tab-pane" id="tab2">
@@ -56,6 +55,8 @@
                 <h3 class="title visible-phone">Submit</h3>
                 <!--only show on mobile when tabs are open-->
                 <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+                <input type="submit" value="Submit" />
+                </form>
                 
               </div>
 
