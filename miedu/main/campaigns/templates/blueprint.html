@@ -101,8 +101,8 @@
         <h2 class="title-divider"><span>Comments<span class="de-em"></span></span> <small>Be noisy, be loud, be heard...</small></h2>
         <!--Comments-->
         <ul class="media-list">
-        
-          {% for comment in campaign.campaigncomment_set %}
+          {% if campaign.campaigncomment_set %}
+          {% for comment in campaign.campaigncomment_set.all %}
           <li class="media row-fluid"> <a class="span1" href="#"> <img src="{{ comment.author.dp.url }}" alt="Picture of {{ comment.author.first_name }}" class="media-object img-polaroid" /> </a>
             <div class="span11 media-body">
               <ul class="inline meta muted">
@@ -114,6 +114,7 @@
             </div>
           </li>
           {% endfor %}
+          {% endif %}
         </ul>
         <div class="comment-form">
           <form id="comment-form">
