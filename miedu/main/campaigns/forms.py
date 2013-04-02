@@ -12,17 +12,26 @@ class CampaignCreationForm(forms.ModelForm):
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Current city...'}))
     country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Current country...'}))
 
+    start_date ui picker default start date
+    end_date uipicker
 
     minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.NumberInput(attrs={'placeholder':'Minimum amount of support...'}))
     goal = forms.IntegerField(label='Funding Goal', widget=forms.NumberInput(attrs={'placeholder':'Total funding goal...'}))
 
 
+    multimedia upload    
 
     headline = forms.CharField(label='Main Heading', widget=forms.TextInput(attrs={'placeholder':'Main heading...'}))
-
+    description addintinymce
     
     call_to_action = forms.CharField(label='Call to Action', widget=forms.TextInput(attrs={'placeholder':'Draw in support...'}))
+    tags addinplaceholdertext
+    summary addintinymce
 
+
+
+    inlineformsetcampaignmilestone
+    inlineformsetcampaignfaqitem
 
     class Meta:
         model = Campaign

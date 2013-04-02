@@ -123,7 +123,7 @@
                   <input type="submit" class="btn btn-primary login" value="Login">
                 </div>
               </form>
-              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="{% url 'registration' %}" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="#">Forgotten password?</a></small> </div>
+              <span class="divider" role="menuitem"></span> <small role="menuitem">Not a member? <a href="{% url 'registration' %}" class="signup">Sign up now!</a></small> <small role="menuitem"><a href="{% url 'contact' %}">Forgotten password?</a></small> </div>
           </li>
         </ul>
         {% endif %}
@@ -147,7 +147,11 @@
             <li><a href="#" class="menu-item">Blog</a></li>
             <li><a href="{% url 'learn' %}" class="menu-item">Learn</a></li>
             <li><a href="{% url 'campaign-list' %}" class="menu-item">Browse Blueprints</a></li>
+            {% if user.is_authenticated %}
             <li><a href="{% url 'campaign-new' %}" class="menu-item">Create a Blueprint</a></li>
+            {% else %}
+            <li><a href="{% url 'registration' %}" class="menu-item">Create a Blueprint</a></li>
+            {% endif %}
           </ul>
         </div>
         <!--/.nav-collapse --> 

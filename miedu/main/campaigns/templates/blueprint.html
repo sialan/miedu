@@ -36,14 +36,14 @@
           <dt>Location</dt>
           <dd>{{ campaign.country }} ({{ campaign.city }}, {{ campaign.state }})</dd>
           <dt>Created by</dt>
-          <dd><a href="#">{{ campaign.account.first_name}} {{ campaign.account.last_name}}</a>       {% if campaign.active %}ACTIVE{% else %}INACTIVE{% endif %}   {% if campaign.completed %}COMPLETED{% elif campaign.consummated and not campaign.completed %}IN PROGRESS{% else %}SEEKING FUNDING{% endif %}</dd>
+          <dd><a href="#">{{ campaign.account.first_name}} {{ campaign.account.last_name}}</a>{% if campaign.active %}  ACTIVE{% else %}   INACTIVE{% endif %}{% if campaign.completed %}   COMPLETED{% elif campaign.consummated and not campaign.completed %}   IN PROGRESS{% else %}   SEEKING FUNDING{% endif %}</dd>
           <dt>Important Dates</dt>
           <dd><strong>Created on: </strong>{{ campaign.created_on }}</dd>
           <dt>Overview</dt>
           <dd>{{ campaign.caption }}</dd>
           <dt>Financial Details</dt>
+          <dd><strong>Minimum:</strong> ${{ campaign.minimum_pledge }}</dd>
           <dd><strong>Funding Goal:</strong> ${{ campaign.goal }}</dd>
-          <dd><strong>Minimum:</strong> ${{ campaign.minimum_pledged }}</dd>
         </dl>
         <a href="#" class="btn btn-primary">Support this blueprint!</a> 
       </div>
