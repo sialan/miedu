@@ -2,6 +2,7 @@ from django.db import models
 from accounts.models import Account
 from multimedia.models import Multimedia
 from taggit.managers import TaggableManager
+from datetime import datetime
 
 # Create your models here.
 class Campaign(models.Model):
@@ -36,7 +37,7 @@ class Campaign(models.Model):
     country = models.CharField(max_length=50)
 
     created_on = models.DateTimeField(auto_now_add=True)
-    start_date = models.DateTimeField()
+    start_date = models.DateTimeField(default=datetime.now)
     end_date = models.DateTimeField()
     completion_date = models.DateTimeField(null=True, blank=True)
     tags = TaggableManager()
