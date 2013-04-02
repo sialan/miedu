@@ -49,8 +49,8 @@
         <div class="comments" id="comments">
           <h3>Comments</h3>
           <ul class="media-list">
-            {% if post.comments %}
-            {% for comment in post.comments %}
+            {% if post.blogcomment_set %}
+            {% for comment in post.blogcomment_set.all %}
             <li class="media row-fluid"> <a class="span1" href="#"> <img src="img/team/deniro.jpg" alt="Picture of Erin" class="media-object img-polaroid" /> </a>
               <div class="span11 media-body">
                 <ul class="inline meta muted">
