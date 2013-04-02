@@ -2293,7 +2293,7 @@ ul.nav-tabs li.active a:hover {
 .showcase-item {
   padding: 2%;
   background: url(../img/bg_content-wrapper.png) left top repeat;
-  border-bottom: 1px solid #ff5821;
+  border-bottom: 1px solid #55a79a;
 }
 .showcase-item.row-fluid {
   width: 96%;
