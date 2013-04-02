@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'storages',
     'social_auth',
     'billing',
+    'tinymce',
 
 )
 
