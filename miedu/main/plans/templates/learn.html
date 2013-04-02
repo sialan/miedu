@@ -21,7 +21,7 @@
     <ul class="thumbnails block customers" id="quicksand">
       {% for article in article_data_list %}
       <li class="span4 type-{{ article.tags.all.0.name }}" data-id="id-{{ forloop.counter }}" data-type="type-{{ article.tags.all.0.name }}">
-        <a href="">
+        <a href="{% url 'article' article.id %}">
           <span class="inner-wrapper">
             <!--
             <span class="img-wrapper">

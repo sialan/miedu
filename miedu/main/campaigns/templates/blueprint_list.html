@@ -82,6 +82,22 @@
       </div>
       {% endif %}
       {% endfor %}
+      <div class="pagination pull-center">
+        <ul>
+          {% if contacts.has_previous %}
+          <li><a href="?page={{ context.previous_page_number }}">Prev</a></li>
+          {% endif %}
+          <!--<li class="active"><a href="#">1</a></li>-->
+          <li class="active">
+            <span class="current">
+            Page {{ context.number }} of {{ context.paginator.num_pages }}.
+            </span>
+          </li>
+          {% if contacts.has_next %}
+          <li><a href="?page={{ contacts.next_page_number }}">Next</a></li>
+          {% endif %}
+        </ul>
+      </div>
       {% else %}
       <!--Row 1--> 
       <div class="row-fluid pricing-stack wrapper">
@@ -738,22 +754,18 @@
           </div>  
         </div>
       </div>
+      <div class="pagination pull-center">
+        <ul>
+          <li><a href="#">Prev</a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>
       {% endif %}  
-
-    <div class="pagination pull-center">
-      <ul>
-        {% if contacts.has_previous %}
-        <li><a href="?page={{ context.previous_page_number }}">Prev</a></li>
-        {% endif %}
-        <!--<li class="active"><a href="#">1</a></li>-->
-        <span class="current">
-          Page {{ context.number }} of {{ context.paginator.num_pages }}.
-        </span>
-        {% if contacts.has_next %}
-        <li><a href="?page={{ contacts.next_page_number }}">Next</a></li>
-        {% endif %}
-      </ul>
-    </div>
 
   </div>
 </div>

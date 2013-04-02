@@ -1,11 +1,54 @@
 {% extends "temp_base.html" %}
-
+{% load extras %}
 {% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
 
 {% block content %}
 <div id="content">
-  <div class="container" id="about">
-    <div class="row"> 
+  <div class="container">
+    
+    <!--Row 2-->
+    <h3 class="title-divider"><span>{{ campaign.title }}</span></h3>
+
+    <!--Portfolio feature item-->
+    <div class="showcase-item row-fluid">
+      
+      <div class="span8 showcase-slides"> 
+        <!-- Slider for project pictures -->   
+        <!--Flexslider Showshow-->
+        <section class="flexslider-wrapper">
+          <div class="flexslider" data-slidernav="auto" data-transition="slide"> 
+            <!--The Slides-->
+            <div class="slides">
+              {% for media in campaign.multimedia %}
+              <img src="{{ media.resource.url }}" class="slide" alt="Project photo 2" />
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="span4 details"> 
+        <!-- quick details -->
+        <h3>Blueprint Details</h3>
+        <dl>
+          <dt>Location</dt>
+          <dd>{{ campaign.country }} ({{ campaign.city }}, {{ campaign.state }})</dd>
+          <dt>Created by</dt>
+          <dd><a href="#">{{ campaign.account.first_name}} {{ campaign.account.last_name}}</a>       {% if campaign.active %}ACTIVE{% else %}INACTIVE{% endif %}   {% if campaign.completed %}COMPLETED{% elif campaign.consummated and not campaign.completed %}IN PROGRESS{% else %}SEEKING FUNDING{% endif %}</dd>
+          <dt>Important Dates</dt>
+          <dd><strong>Created on: </strong>{{ campaign.created_on }}</dd>
+          <dt>Overview</dt>
+          <dd>{{ campaign.caption }}</dd>
+          <dt>Financial Details</dt>
+          <dd><strong>Funding Goal:</strong> ${{ campaign.goal }}</dd>
+          <dd><strong>Minimum:</strong> ${{ campaign.minimum_pledged }}</dd>
+        </dl>
+        <a href="#" class="btn btn-primary">Support this blueprint!</a> 
+      </div>
+    </div>
+
+    <div class="row-fluid block showcase">
+      
       <!-- sidebar -->
       <div class="span3 sidebar">
         <div class="section-menu">
@@ -13,12 +56,12 @@
             <li class="nav-header">In This Section</li>
             <li class="active"><a href="#content" class="first">The Content <small>All the goods</small><i class="icon-angle-right"></i></a></li>
             <li><a href="#summary">Summary <small>30 seconds or less</small><i class="icon-angle-right"></i></a></li>
-            <!--<li><a href="#exercises">Exercises <small>More learnings</small><i class="icon-angle-right"></i></a></li>-->
-            <li><a href="#resources">Resources <small>Links and references</small><i class="icon-angle-right"></i></a></li>
             <li><a href="#comments">Comments<small>Join the discussion</small><i class="icon-angle-right"></i></a></li>
           </ul>
         </div>
         
+        <!--
+        TODO: Add Projects here
         <div class="inner">
           <div class="block">
             <h4 class="title-divider">
@@ -35,50 +78,29 @@
             </ul>
           </div>
 
-          <div class="block">
-            <h4 class="title-divider"><i class="icon-user"><span>Tags</span></h4>
-            <div class="tag-cloud">
-              {% for tag in article.tags.all %}
-              <span><a href="#">{{ tag.name }}</a></span> 
-              {% endfor %}
-            </div>
-          </div>
         </div>
+        -->
     
-
       </div>
-      
       <!--main content-->
       <div id="content" class="span9">
-        <h2 class="title-divider"><span>{{ article.title }} <span class="de-em"></span></span> <small>{{ article.heading }}</small></h2>
-        {{ article.body }}
+        <h2 class="title-divider"><span>The <span class="de-em">Details</span></span> <small>{{ campaign.headline }}</small></h2>
+        {{ campaign.body }}
       </div>
       <!--summary content-->
       <div id="summary" class="span9">
-        <h2 class="title-divider"><span>Summary<span class="de-em"></span></span> <small>In 30 seconds or less...</small></h2>
-        {{ article.summation }}
+        <h2 class="title-divider"><span>{{ campaign.endline }}<span class="de-em"></span></span> <small>In 30 seconds or less...</small></h2>
+        {{ campaign.summation }}
       </div>
-      <!--exercises content
-      <div id="exercises" class="span9">
-        <h2 class="title-divider"><span>Practice <span class="de-em"></span></span> <small>A few exercises to solidify your learning</small></h2>
-      </div>
-      -->
-      <!--resource content-->
-      <div id="resources" class="span9">
-        <h2 class="title-divider"><span>Resources<span class="de-em"></span></span> <small>If you need references...</small></h2>
-        <ul>
-        {% for resource in article.resources %}
-        <li><a href="#">{{ resource.title }}</a></li>
-        {% endfor %}
-        </ul>
-      </div>
+      <p class="lead">{{ campaign.call_to_action }}</p>
+
       <!--comment content-->
       <div id="comments" class="span9">
         <h2 class="title-divider"><span>Comments<span class="de-em"></span></span> <small>Be noisy, be loud, be heard...</small></h2>
         <!--Comments-->
         <ul class="media-list">
         
-          {% for comment in article.articlecomment_set %}
+          {% for comment in campaign.campaigncomment_set %}
           <li class="media row-fluid"> <a class="span1" href="#"> <img src="{{ comment.author.dp.url }}" alt="Picture of {{ comment.author.first_name }}" class="media-object img-polaroid" /> </a>
             <div class="span11 media-body">
               <ul class="inline meta muted">
@@ -110,6 +132,8 @@
       </div>
 
     </div>
+
   </div>
 </div>
 {% endblock %}
+<!-- we need to add related stuff -->

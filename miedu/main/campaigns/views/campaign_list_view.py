@@ -16,4 +16,4 @@ def campaigns(request):
         # If page is out of range (e.g. 9999), deliver last page of results.
         context = {'blueprint_list': paginator.page(paginator.num_pages)}
 
-    return render(request, 'blueprints.html', context)
+    return render(request, 'blueprint_list.html', context)

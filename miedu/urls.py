@@ -20,26 +20,26 @@ urlpatterns = patterns('',
     url(r'^tutorial/advanced', TemplateView.as_view(template_name="advanced.html"), name='tut-advanced'),
 
     # Blogs and Event info
-    #url(r'^blog', 'blogs.views.blog_view.blog', name='blog'),
+    #url(r'^blog/$', 'blogs.views.blog_view.blog', name='blog'),
     # TODO: capture payment url string
-    url(r'^blog/(?P<post_id>\d+)', 'blogs.views.post_view.post', name='blog-post'),
+    url(r'^blog/(?P<post_id>\d+)/$', 'blogs.views.post_view.post', name='blog-post'),
 
     # Learning resources
-    url(r'^learn', 'plans.views.plan_view.plan', name='learn'),
-    url(r'^learn/(?P<article_id>\d+)', 'articles.views.article_view.article', name='tutorial'),
-    #url(r'^learn/(?P<lesson_id>\d+)', 'lessons.views.lesson_view', name='lesson'),
-    #url(r'^learn/(?P<lesson_id>\d+)/(?P<article_id>\d+)', 'articles.views.article_view', name='tutorial'),
+    url(r'^learn/$', 'plans.views.plan_view.plan', name='learn'),
+    url(r'^learn/(?P<article_id>\d+)/$', 'articles.views.article_view.article', name='article'),
+    #url(r'^learn/(?P<lesson_id>\d+)/$', 'lessons.views.lesson_view', name='lesson'),
+    #url(r'^learn/(?P<lesson_id>\d+)/$/(?P<article_id>\d+)', 'articles.views.article_view', name='tutorial'),
 
     # Accounts info pages and registration
-    url(r'^registration', 'accounts.views.registration_view.registration', name='registration'),
+    url(r'^registration/$', 'accounts.views.registration_view.registration', name='registration'),
     url(r'^login/$', 'accounts.views.login_view.login', name='login'),
     url(r'^logout/$', 'accounts.views.logout_view.logout', name='logout'),
     #url(r'^account/(?P<account_id>\d+)', 'accounts.views.account_view.profile', name='account'),
 
     # Campaigns
     url(r'^campaign/browse/$', 'campaigns.views.campaign_list_view.campaigns', name='campaign-list'),
-    #url(r'^campaign/new', 'campaigns.views.campaign_new_view', name='campaign-new'),
-    #url(r'^campaign/(?P<campaign_id>\d+)', 'campaigns.views.campaign_detail_view', name='campaign-detail'),
+    #url(r'^campaign/new/$', 'campaigns.views.campaign_new_view.campaign', name='campaign-new'),
+    url(r'^campaign/(?P<campaign_id>\d+)/$', 'campaigns.views.campaign_detail_view', name='campaign-detail'),
     #url(r'^campaign/(?P<campaign_id>\d+)/edit', 'campaigns.views.campaign_edit_view', name='campaign-edit'),
 
     # Enabling the admin and accompanying documentation:
