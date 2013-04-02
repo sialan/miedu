@@ -36,7 +36,7 @@ STATIC_ROOT = normpath(join(SITE_ROOT, 'static'))
 # URL prefix for static files./
 # Example: "http)://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
-TINYMCE_JS_URL = os.path.join(STATIC_ROOT, "tiny_mce/tiny_mce.js")
+
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".

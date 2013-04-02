@@ -1,11 +1,10 @@
 from django import forms
-from tinymce.widgets import TinyMCE
 from campaigns.models import Campaign
 
 class CampaignCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    __init__ set account,city,country
+    #__init__ set account,city,country
 
     title = forms.CharField(label='Title', widget=forms.TextInput(attrs={'placeholder':'Title of the blueprint...'}))
     account = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))
@@ -13,25 +12,25 @@ class CampaignCreationForm(forms.ModelForm):
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Current city...'}))
     country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Current country...'}))
 
-    start_date ui picker default start date
-    end_date uipicker
+    #start_date ui picker default start date
+    # end_date uipicker
 
     minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.TextInput(attrs={'placeholder':'Minimum amount of support...'}))
     goal = forms.IntegerField(label='Funding Goal', widget=forms.TextInput(attrs={'placeholder':'Total funding goal...'}))
 
 
-    multimedia upload    
+    #multimedia upload    
 
     headline = forms.CharField(label='Main Heading', widget=forms.TextInput(attrs={'placeholder':'Main heading...'}))
-    description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+    # description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
     
     call_to_action = forms.CharField(label='Call to Action', widget=forms.TextInput(attrs={'placeholder':'Draw in support...'}))
-    tags addinplaceholdertext
-    summary = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
+    #tags addinplaceholdertext
+    #summary = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
 
 
-    inlineformsetcampaignmilestone
-    inlineformsetcampaignfaqitem
+    #inlineformsetcampaignmilestone
+    #inlineformsetcampaignfaqitem
 
     class Meta:
         model = Campaign
@@ -41,7 +40,7 @@ class CampaignCreationForm(forms.ModelForm):
         # Save the provided password in hashed format
         blueprint = super(CampaignCreationForm, self).save(commit=False)
         if commit:
-            also save city country to this user
+            # also save city country to this user
             blueprint.save()
         return blueprint
 
