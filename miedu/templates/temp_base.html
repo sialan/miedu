@@ -181,6 +181,22 @@
 <footer id="footer">
   <div class="container">
     <a href="#top" class="scrolltop">Top</a>
+    
+    <div class="row-fluid">
+      <div class="span9"> 
+        <!--map & contact details-->
+        <h3 class="uc">Find Blueprints Near You</h3>
+        <div id="map-canvas"> </div>
+      </div>
+      <div class="span3">
+        <h3 class="uc">Follow Us On:</h3>
+        <!--social media icons-->
+        <div class="social-media"> 
+          <!--@todo: replace with company social media details--> 
+          <a href="#"><i class="icon-twitter"></i> Twitter</a> <a href="#"><i class="icon-facebook"></i> Facebook</a> <a href="#"><i class="icon-linkedin"></i> LinkedIn</a> <a href="#"><i class="icon-google-plus"></i> Google+</a> </div>
+      </div>
+    </div>
+
     <div class="row-fluid">
       
       <!--@todo: replace with company copyright details-->
@@ -213,6 +229,25 @@
 <!--Custom scripts mainly used to trigger libraries --> 
 <script src="{{ STATIC_URL }}js/scripts/script.js"></script>
 
+<script>
+$(document).ready(function() {
+  function initialize() {
+    var mapOptions = {
+      zoom: 8,
+      center: new google.maps.LatLng(-34.397, 150.644),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  }
+  function loadScript() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "http://maps.googleapis.com/maps/api/js?key=AIzaSyBU20reDJFE7JTIuj-03CWB04PMRfvII98&sensor=TRUE&callback=initialize";
+    document.body.appendChild(script);
+  }
+  window.onload = loadScript;
+});
+</script>
 {% block scripts %} {% endblock %}
 
 </body>
