@@ -11,12 +11,12 @@ ALLOWED_HOSTS = []
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = aws_storage_bucket_name
+AWS_STORAGE_BUCKET_NAME = "miedu"
 
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
-AWS_ACCESS_KEY_ID = aws_access_key_id
-AWS_SECRET_ACCESS_KEY = aws_secret_access_key
+AWS_ACCESS_KEY_ID = "AKIAIBVM77ELDGQNCF4Q"
+AWS_SECRET_ACCESS_KEY = "Crd/CTkOWtqlkQ9r83Xr32nPH6CLALp7Ppv5dm5v"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
