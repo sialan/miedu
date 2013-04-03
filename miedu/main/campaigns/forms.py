@@ -5,8 +5,9 @@ from campaigns.models import Campaign
 class CampaignCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    #__init__ set account
-
+    def __init__(self, user, *args, **kwargs):
+        self.fields['account'] = user
+        
     account = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))    
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Ottawa, Toronto, or Montreal...'}))
     country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Canada, Ireland, or USA...'}))
@@ -25,7 +26,6 @@ class CampaignCreationForm(forms.ModelForm):
 
     #inlineformsetcampaignmilestone
     #inlineformsetcampaignfaqitem
-
 
 
     class Meta:
