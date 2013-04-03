@@ -96,14 +96,6 @@
         
         <!--mobile collapse menu button--> 
         <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
-        
-        <!--user menu-->
-        <li class="dropdown"> <a href="#" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">About +</a> 
-
-        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
-                <li role="menuitem"><a href="{% url 'about' %}" tabindex="-1" class="menu-item">My Profile</a></li>
-                <li role="menuitem"><a href="{% url 'tutorial' %}" tabindex="-1" class="menu-item">Sign Out</a></li>
-              </ul>
 
         {% if user.is_authenticated %}
         <ul class="nav user-menu pull-right">
