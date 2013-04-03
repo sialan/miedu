@@ -21,7 +21,7 @@
             <div class="slides">
               {% if campaign.multimedia %}
               {% for media in campaign.multimedia.all %}
-              <img src="{{ media.resource.url }}" class="slide" alt="Project photo 2" />
+              <img src="{{ STATIC_URL }}img/showcase/featured-project5.png" class="slide" alt="Project photo 2" />
               {% endfor %}
               {% endif %}
             </div>

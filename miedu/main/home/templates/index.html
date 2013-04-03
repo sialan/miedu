@@ -77,7 +77,7 @@
         <!--buttons-->
         <h3 class="title-divider"><span>Featured Blueprints</span></h3>
         <div class="row-fluid pricing-stack">
-
+          <!--
           {% if featured_campaign_list %}
           {% for campaign in featured_campaign_list %}
           <div class="span3">
@@ -116,19 +116,122 @@
           </div>
           {% endfor %}
           {% else %}
+        -->
           <div class="span3">
             <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
+              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project3.png" alt="Jimi" /></h3>
               <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
+                <span class="term">Funding Goal: <span class="digits">1500</span></span>
               </p>
               <ul class="unstyled points">
                 <li>
-                  <h6>title here</h6>
+                  <h6>English for Engineers</h6>
                   <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
                 </li>
                 <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
+                  <p>Looking to brush up on my technical english. Can you imagine learning all that engineering and having to relearn all the words in a different language?</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 30%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$500</span>
+                <span class="pull-right"><em>Days Left: </em>11</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$500</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>11</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project6.png"
+              <p class="price">
+                <span class="term">FUNDED <span class="digits">
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>Casebooks for Ivey</h6>
+                  <span>by <strong><a href="#">Lola</a></strong> (Age 22)</span>
+                </li>
+                <li>
+                  <p>So I am a 4th year exchange student at the Richard Ivey school of Business. These extra textbooks are very expensive and I would love some help</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 100%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$400</span>
+                <span class="pull-right"><em>Days Left: </em>3</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$400</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>3</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project1.png" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$10000</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>Diploma in CS</h6>
+                  <span>by <strong><a href="#">Jimi</a></strong> (Age 28)</span>
+                </li>
+                <li>
+                  <p>After a lifetime of development and programming I would like to formalize some of my education in this new country of mine. Looking to complete the Diploma in Computer Science offered at the University of Western Ontario</p>
+                  <span><strong>Location: </strong>Canada</span>
+                </li>
+              </ul>
+              <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 70%"></div>
+              </div>
+              <p class="progress-descriptor hidden-tablet">
+                <span class="pull-left"><em>Raised: </em>$7000</span>
+                <span class="pull-right"><em>Days Left: </em>11</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span><em>Raised: </em>$7000</span>
+              </p>
+              <p class="progress-descriptor visible-tablet">
+                <span class=""><em>Days Left: </em>11</span>
+              </p>
+
+              <a class="btn btn-primary">Details</a>
+
+            </div>  
+          </div>
+          <div class="span3">
+            <div class="well active">
+              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project11.png" alt="Jimi" /></h3>
+              <p class="price">
+                <span class="term">Funding Goal: <span class="digits">$6500</span></span>
+              </p>
+              <ul class="unstyled points">
+                <li>
+                  <h6>Courses in Styling</h6>
+                  <span>by <strong><a href="#">Rosa</a></strong> (Age 34)</span>
+                </li>
+                <li>
+                  <p>I used to be a hairdresser in my native country of Colombia. However, the styles are very different and I would like to attend some local community college courses to learn how to do "Justin Bieber" hair.</p>
                   <span><strong>Location: </strong>Canada</span>
                 </li>
               </ul>
@@ -150,109 +253,7 @@
 
             </div>  
           </div>
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          {% endif %}
+          <!--{% endif %}-->
 
         </div>
       </div>
