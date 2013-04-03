@@ -26,7 +26,7 @@
               
               <div class="tab-pane active" id="tab1">
                 <h3 class="title visible-phone">Project Info</h3>
-                <form action="/contact/" method="post">
+                <form action="." method="post">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
                 <div class="fieldWrapper">
@@ -113,7 +113,8 @@
               <div class="tab-pane" id="tab6">
                 <h3 class="title visible-phone">Submit</h3>
                 <!--only show on mobile when tabs are open-->
-                <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
+                <p>You're almost there, check it over and if you're happy then submit your blueprint for funding! (You can change some details later)</p>
+
                 <input type="submit" value="Submit" />
                 </form>  
               </div>

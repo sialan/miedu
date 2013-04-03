@@ -14,7 +14,7 @@ def registration(request):
             new_user = form.save()
             return HttpResponseRedirect(reverse('home'))
         else:
-        	return HttpResponseRedirect(reverse('home'))
+        	return render(request, "signup.html", {"form": form})
     else:
         form = UserCreationForm()
         context = {"form": form}

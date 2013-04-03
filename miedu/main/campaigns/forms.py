@@ -5,28 +5,25 @@ from campaigns.models import Campaign
 class CampaignCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    #__init__ set account,city,country
+    #__init__ set account
 
     account = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))    
-    city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Current city...'}))
-    country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Current country...'}))
-    end_date = forms.DateTimeField(widget=forms.TextInput(attrs={'placeholder':'Pick a closing date...'}))
-    minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.TextInput(attrs={'placeholder':'Minimum amount of support...'}))
-    goal = forms.IntegerField(label='Funding Goal', widget=forms.TextInput(attrs={'placeholder':'Total funding goal...'}))
+    city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Ottawa, Toronto, or Montreal...'}))
+    country = forms.CharField(label='Country', widget=forms.TextInput(attrs={'placeholder':'Canada, Ireland, or USA...'}))
+    end_date = forms.DateTimeField(widget=forms.TextInput(attrs={'placeholder':'When will your fundin'}))
+    minimum_pledge = forms.IntegerField(label='Minimum Pledge', widget=forms.TextInput(attrs={'placeholder':'5, 20, or more...'}))
+    goal = forms.IntegerField(label='Funding Goal', widget=forms.TextInput(attrs={'placeholder':'5000, 10000, or more...'}))
 
     
-    title = forms.CharField(label='Title', widget=forms.TextInput(attrs={'placeholder':'Title of the blueprint...'}))
-    headline = forms.CharField(label='Main Heading', widget=forms.TextInput(attrs={'placeholder':'Main heading...'}))
+    title = forms.CharField(label='Title', widget=forms.TextInput(attrs={'placeholder':'Something short for yourself...'}))
+    headline = forms.CharField(label='Main Heading', widget=forms.TextInput(attrs={'placeholder':'Something catchy for supporters...'}))
     # description = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
-    call_to_action = forms.CharField(label='Call to Action', widget=forms.TextInput(attrs={'placeholder':'Draw in support...'}))
+    call_to_action = forms.CharField(label='Call to Action', widget=forms.TextInput(attrs={'placeholder':'Get people interested...'}))
     tags = TagField(widget=forms.TextInput(attrs={'placeholder':'tech, html5, social'}))
     #summary = forms.CharField(widget=TinyMCE(attrs={'cols': 80, 'rows': 30}))
 
 
     #inlineformsetcampaignmilestone
-
-
-
     #inlineformsetcampaignfaqitem
 
 
