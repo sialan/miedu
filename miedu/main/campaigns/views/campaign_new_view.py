@@ -13,7 +13,9 @@ def campaign(request):
         if form.is_valid():
             new_campaign = form.save()
             form.save_m2m()
-            return HttpResponseRedirect(reverse('campaign-list'))
+            return HttpResponseRedirect(reverse('campaign-list'
+        else:
+            return render(request, "new_blueprint.html", {"form": form})
     else:
         form = CampaignCreationForm()
         context = {"form": form}
