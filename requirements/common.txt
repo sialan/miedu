@@ -14,4 +14,3 @@ django-filebrowser==3.5.2
 boto==2.8.0
 django-social-auth==0.7.22
 django-merchant==0.0.8a0
-stripe==1.7.10

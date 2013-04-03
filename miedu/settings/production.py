@@ -2,7 +2,7 @@ from secret import *
 from common import *
 from os.path import join, normpath
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
