@@ -17,6 +17,6 @@ def campaign(request):
         else:
             return render(request, "new_blueprint.html", {"form": form})
     else:
-        form = CampaignCreationForm(request.user)
+        form = CampaignCreationForm()
         context = {"form": form}
         return render(request, "new_blueprint.html", context)
