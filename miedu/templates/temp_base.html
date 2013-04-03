@@ -103,10 +103,10 @@
           <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">My Account</a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="login-drop">
               <li role="menuitem"><a href="{% url 'about' %}" tabindex="-1" class="menu-item">My Profile</a></li>
-              <li role="menuitem">
+              <li role="menuitem centered">
                 <form action="{% url 'logout' %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
                   {% csrf_token %}
-                  <input type="submit" class="menu-item">Sign Out
+                  <input type="submit" class="menu-item btn btn-primary login logout">
                 </form>
               </li>
             </ul>
@@ -229,6 +229,7 @@
 <script src="{{ STATIC_URL }}js/libs/jquery/jquery.stellar.min.js"></script> 
 <!--Custom scripts mainly used to trigger libraries --> 
 <script src="{{ STATIC_URL }}js/scripts/script.js"></script>
+<!--
 <script type="text/javascript"
       src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBU20reDJFE7JTIuj-03CWB04PMRfvII98&sensor=true&callback=initialize">
 </script>
@@ -247,6 +248,7 @@ $(document).ready(function() {
 });
 
 </script>
+-->
 
 {% block scripts %} {% endblock %}
 

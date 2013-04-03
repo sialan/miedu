@@ -23,13 +23,17 @@
               <li><a href="#tab6" data-toggle="tab">Submit <small>Validate and go...</small><i class="icon-angle-right"></i></a></li>
             </ul>
             <div class="tab-content span8">
+              <form action="/contact/" method="post">
+              {% csrf_token %}
               <div class="tab-pane active" id="tab1">
                 <h3 class="title visible-phone">Project Info</h3>
-                <form action="/contact/" method="post">
-                  {% csrf_token %}
-                  {{ form.as_p }}
+                {{ form.non_field_errors }}
+                <div class="fieldWrapper">
+                  {{ form.account.errors }}
+                  <label for="id_account">Account:</label>
+                  {{ form.account }}
+                </div>
                   
-
               </div>
               <div class="tab-pane" id="tab2">
                 <h3 class="title visible-phone">The Details</h3>
@@ -56,9 +60,9 @@
                 <!--only show on mobile when tabs are open-->
                 <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
                 <input type="submit" value="Submit" />
-                </form>
                 
               </div>
+              </form>
 
             </div>
           </div>
