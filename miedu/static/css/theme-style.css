@@ -926,8 +926,7 @@ a:focus {
   color: rgba(255, 255, 255, 0.6);
   border-top: 2px solid #55a79a;
   */
-  min-height: 280px;
-  max-height:380px;
+  height:380px;
   padding: 60px 0 40px 0;
   background: #1a1a1a url(../img/bg_footer-map.png) top center no-repeat;
   color: #6b7175;
