@@ -5,9 +5,6 @@ from campaigns.models import Campaign
 class CampaignCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    def __init__(self, *args, **kwargs):
-        super(CampaignCreationForm, self).__init__(*args, **kwargs)
-        self.fields['account'] = args[0]
 
     account = forms.CharField(widget=forms.TextInput(attrs={'readonly':'readonly'}))    
     city = forms.CharField(label='City', widget=forms.TextInput(attrs={'placeholder':'Ottawa, Toronto, or Montreal...'}))
