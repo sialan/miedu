@@ -13,6 +13,8 @@ def registration(request):
         if form.is_valid():
             new_user = form.save()
             return HttpResponseRedirect(reverse('home'))
+        else:
+        	return HttpResponseRedirect(reverse('home'))
     else:
         form = UserCreationForm()
         context = {"form": form}
