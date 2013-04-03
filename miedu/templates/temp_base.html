@@ -98,18 +98,26 @@
         <a class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
         
         <!--user menu-->
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" id="about-drop" data-toggle="dropdown">About +</a> 
+
+        <ul class="dropdown-menu" role="menu" aria-labelledby="about-drop">
+                <li role="menuitem"><a href="{% url 'about' %}" tabindex="-1" class="menu-item">My Profile</a></li>
+                <li role="menuitem"><a href="{% url 'tutorial' %}" tabindex="-1" class="menu-item">Sign Out</a></li>
+              </ul>
+
         {% if user.is_authenticated %}
         <ul class="nav user-menu pull-right">
           <li><a href="#" class="btn btn-primary signup">My Blueprints</a></li>
           <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">My Account</a>
-            <div class="dropdown-menu" role="menu" aria-labelledby="login-drop">
-              <form action="{% url 'logout' %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
-                {% csrf_token %}
-                <div class="input-append">
-                  <input type="submit" class="btn btn-primary login logout" value="Logout">
-                </div>
-              </form>
-            </div>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="login-drop">
+              <li role="menuitem"><a href="{% url 'about' %}" tabindex="-1" class="menu-item">My Profile</a></li>
+              <li role="menuitem">
+                <form action="{% url 'logout' %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
+                  {% csrf_token %}
+                  <input type="submit" class="menu-item btn btn-primary login logout">Sign Out
+                </form>
+              </li>
+            </ul>
           </li>
         </ul>
         {% else %}
@@ -205,8 +213,8 @@
         <div class="span9">
           <p>Copyright 2013 &copy; TeamTitanic</p>
         </div> <!-- end of span6 -->
-        <div class="span2 offset1">
-          <ul class="inline">
+        <div class="span3">
+          <ul class="inline pull-right">
             <li><a href="#">Terms</a></li>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Contact Us</a></li>
