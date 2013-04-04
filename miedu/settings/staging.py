@@ -11,12 +11,12 @@ ALLOWED_HOSTS = []
 
 DEFAULT_FILE_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-AWS_STORAGE_BUCKET_NAME = 'miedu'
+AWS_STORAGE_BUCKET_NAME = aws_storage_bucketname
 
 S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
-AWS_ACCESS_KEY_ID = 'AKIAIBVM77ELDGQNCF4Q'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = aws_access_key_id 
+AWS_SECRET_ACCESS_KEY = aws_secret_access_key
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
@@ -68,9 +68,9 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql', 'mysql', etc.
-        'NAME': 'miedu_staging_v1',                      # Or path to database file if using sqlite3.
-        'USER': 'root',
-        'PASSWORD': 'ari1gold',
+        'NAME': staging_database_name,                      # Or path to database file if using sqlite3.
+        'USER': staging_database_user,
+        'PASSWORD': staging_database_password,
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
         'STORAGE_ENGINE': 'INNODB',
