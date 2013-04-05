@@ -20,7 +20,7 @@ urlpatterns = patterns('',
     url(r'^tutorial/advanced', TemplateView.as_view(template_name="advanced.html"), name='tut-advanced'),
 
     # Blogs and Event info
-    #url(r'^blog/$', 'blogs.views.blog_view.blog', name='blog'),
+    url(r'^blog/$', 'blogs.views.blog_view.blog', name='blog'),
     # TODO: capture payment url string
     url(r'^blog/(?P<post_id>\d+)/$', 'blogs.views.post_view.post', name='blog-post'),
 
@@ -39,6 +39,7 @@ urlpatterns = patterns('',
     # Campaigns
     url(r'^campaign/browse/$', 'campaigns.views.campaign_list_view.campaigns', name='campaign-list'),
     url(r'^campaign/new/$', 'campaigns.views.campaign_new_view.campaign', name='campaign-new'),
+    url(r'^campaign/mi/$', 'campaigns.views.campaign_mi_view.micampaigns', name='mi-campaigns'),
     url(r'^campaign/(?P<campaign_id>\d+)/$', 'campaigns.views.campaign_detail_view.blueprint', name='campaign-detail'),
     #url(r'^campaign/(?P<campaign_id>\d+)/edit', 'campaigns.views.campaign_edit_view', name='campaign-edit'),
 

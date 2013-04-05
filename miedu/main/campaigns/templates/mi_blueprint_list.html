@@ -1,0 +1,225 @@
+{% extends "temp_base.html" %}
+{% load extras %}
+{% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
+
+{% block content %}
+<div id="content">
+  <div class="container">
+    
+    <!--Row 2-->
+    <h3 class="title-divider"><span>Blueprints I've Created</span></h3>
+      
+      {% if mi_blueprint_list %}
+      {% for blueprint in mi_blueprint_list %}
+      {% if forloop.counter == 1 or forloop.counter0|divisibleby:"4" %}
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3">
+          <div class="well active">
+            <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project12.png" alt="Jimi" /></h3>
+            <p class="price">
+              {% if blueprint.amount_pledged == blueprint.goal %}
+              <span class="term">Funded!<span class="digits"></span></span>
+              {% else %}
+              <span class="term">Funding Goal: <span class="digits">${{ blueprint.goal }}</span></span>
+              {% endif %}
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>{{ blueprint.title }}</h6>
+                <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age {{ blueprint.account.date_of_birth|timesince|default:'N/A'}})</span>
+              </li>
+              <li>
+                <p>{% autoescape off %}{{ blueprint.description|truncatewords:34 }}{% endautoescape %}</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: {{ blueprint.amount_pledged|percentage_of:blueprint.goal|default:'0%' }}"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+              <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <a href="{% url 'campaign-detail' blueprint.id %}" class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      {% else %}
+      <div class="span3">
+        <div class="well active">
+          <h3 class="title"><img src="{{ multimedia.0.resource.url }}" alt="Jimi" /></h3>
+          <p class="price">
+            <span class="term">Funding Goal: <span class="digits">${{ blueprint.counter }}</span></span>
+          </p>
+          <ul class="unstyled points">
+            <li>
+              <h6>{{ blueprint.title }}</h6>
+              <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age 30)</span>
+            </li>
+            <li>
+              <p>{{ blueprint.description|truncatewords:34 }}</p>
+              <span><strong>Location: </strong>Canada</span>
+            </li>
+          </ul>
+          <div class="progress progress-warning progress-striped">
+            <div class="bar" style="width: {{ amount_pledged|percentage_of:goal|default:'0%' }}"></div>
+          </div>
+          <p class="progress-descriptor hidden-tablet">
+            <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+            <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+          </p>
+          <p class="progress-descriptor visible-tablet">
+            <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+          </p>
+          <p class="progress-descriptor visible-tablet">
+            <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+          </p>
+          <a href="{% url 'campaign' %}" class="btn btn-primary">Details</a>
+        </div>  
+      </div>
+      {% endif %}
+      {% endfor %}
+      <!--
+      <div class="pagination pull-center">
+        <ul>
+          {% if contacts.has_previous %}
+          <li><a href="?page={{ context.previous_page_number }}">Prev</a></li>
+          {% else %}
+          <li><a href="#">Prev</a></li>
+          {% endif %}
+          <li class="active">
+            <span class="current">
+            Page {{ context.number|default:"1" }} of {{ context.paginator.num_pages|default:"1" }}.
+            </span>
+          </li>
+          {% if contacts.has_next %}
+          <li><a href="?page={{ contacts.next_page_number }}">Next</a></li>
+          {% else %}
+          <li><a href="#">Next</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      -->
+      {% else %}
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <p>No blueprints of your own yet, get started today. <a href="{% url 'campaign-new' %}" class="btn btn-mini btn-primary">Create a blueprint</a>
+      </div>
+      {% endif %}  
+
+      <h3 class="title-divider"><span>Blueprints I've Supported</span></h3>
+      {% if supporter_blueprint_list %}
+      {% for blueprint in supporter_blueprint_list %}
+      {% if forloop.counter == 1 or forloop.counter0|divisibleby:"4" %}
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <div class="span3">
+          <div class="well active">
+            <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project12.png" alt="Jimi" /></h3>
+            <p class="price">
+              {% if blueprint.amount_pledged == blueprint.goal %}
+              <span class="term">Funded!<span class="digits"></span></span>
+              {% else %}
+              <span class="term">Funding Goal: <span class="digits">${{ blueprint.goal }}</span></span>
+              {% endif %}
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>{{ blueprint.title }}</h6>
+                <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age {{ blueprint.account.date_of_birth|timesince|default:'N/A'}})</span>
+              </li>
+              <li>
+                <p>{% autoescape off %}{{ blueprint.description|truncatewords:34 }}{% endautoescape %}</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: {{ blueprint.amount_pledged|percentage_of:blueprint.goal|default:'0%' }}"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+              <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <a href="{% url 'campaign-detail' blueprint.id %}" class="btn btn-primary">Details</a>
+          </div>  
+        </div>
+      </div>
+      {% else %}
+      <div class="span3">
+        <div class="well active">
+          <h3 class="title"><img src="{{ multimedia.0.resource.url }}" alt="Jimi" /></h3>
+          <p class="price">
+            <span class="term">Funding Goal: <span class="digits">${{ blueprint.counter }}</span></span>
+          </p>
+          <ul class="unstyled points">
+            <li>
+              <h6>{{ blueprint.title }}</h6>
+              <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age 30)</span>
+            </li>
+            <li>
+              <p>{{ blueprint.description|truncatewords:34 }}</p>
+              <span><strong>Location: </strong>Canada</span>
+            </li>
+          </ul>
+          <div class="progress progress-warning progress-striped">
+            <div class="bar" style="width: {{ amount_pledged|percentage_of:goal|default:'0%' }}"></div>
+          </div>
+          <p class="progress-descriptor hidden-tablet">
+            <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+            <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+          </p>
+          <p class="progress-descriptor visible-tablet">
+            <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+          </p>
+          <p class="progress-descriptor visible-tablet">
+            <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+          </p>
+          <a href="{% url 'campaign' %}" class="btn btn-primary">Details</a>
+        </div>  
+      </div>
+      {% endif %}
+      {% endfor %}
+      <!--
+      <div class="pagination pull-center">
+        <ul>
+          {% if contacts.has_previous %}
+          <li><a href="?page={{ context.previous_page_number }}">Prev</a></li>
+          {% else %}
+          <li><a href="#">Prev</a></li>
+          {% endif %}
+          <li class="active">
+            <span class="current">
+            Page {{ context.number|default:"1" }} of {{ context.paginator.num_pages|default:"1" }}.
+            </span>
+          </li>
+          {% if contacts.has_next %}
+          <li><a href="?page={{ contacts.next_page_number }}">Next</a></li>
+          {% else %}
+          <li><a href="#">Next</a></li>
+          {% endif %}
+        </ul>
+      </div>
+      -->
+      {% else %}
+      <!--Row 1--> 
+      <div class="row-fluid pricing-stack wrapper">
+        <p>No blueprints supported yet, get started and crowdfund someone else's educational blueprint. <a href="{% url 'campaign-list' %}" class="btn btn-mini btn-primary">Browse blueprints</a>
+      </div>
+      {% endif %}
+
+  </div>
+</div>
+{% endblock %}

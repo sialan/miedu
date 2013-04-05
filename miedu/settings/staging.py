@@ -1,4 +1,3 @@
-from secret import *
 from common import *
 from os.path import join, normpath
 

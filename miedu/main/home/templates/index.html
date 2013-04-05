@@ -1,5 +1,5 @@
 {% extends "temp_base.html" %}
-
+{% load extras %}
 {% block title %}Locallaunch: Crowdfunding your Education{% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
           
           <!--Slide #1 with caption-->
           <div class="slide row-fluid">
-            <img src="../static/img/slides/slide2.png" alt="Slide 1" />
+            <img src="{{ STATIC_URL }}img/slides/slide2.png" alt="Slide 1" />
           </div>
           <div class="slide row-fluid">
             <div class="span7 youtube-container">
@@ -29,7 +29,7 @@
           <!--Slide #2 straight image 1170px wide x 390px high-->
           <div class="slide row-fluid">
             <div class="span7">
-              <img src="../static/img/slides/slide3.jpg" alt="Slide 2" />
+              <img src="{{ STATIC_URL }}img/slides/slide3.jpg" alt="Slide 2" />
             </div>
             <div class="span5 caption">
               <h2>We'll Fund You!</h2>
@@ -52,19 +52,19 @@
     <div class="block features">
       <h2 class="title-divider"><span>How <span class="de-em">it works</span></span> <small>Invest in yourself.</small></h2>
       <ul class="thumbnails">
-        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-1.png" alt="Feature 1" /></a>
+        <li class="span3"> <a href="features.html"><img src="{{ STATIC_URL }}img/features/feature-1.png" alt="Feature 1" /></a>
           <h3 class="title"><a href="features.html">Learn <span class="de-em">New Skills</span></a></h3>
           <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
         </li>
-        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-2.png" alt="Feature 2" /></a>
+        <li class="span3"> <a href="features.html"><img src="{{ STATIC_URL }}img/features/feature-2.png" alt="Feature 2" /></a>
           <h3 class="title"><a href="features.html">Language & Cultural <span class="de-em">Training</span></a></h3>
           <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
         </li>
-        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-3.png" alt="Feature 3" /></a>
+        <li class="span3"> <a href="features.html"><img src="{{ STATIC_URL }}img/features/feature-3.png" alt="Feature 3" /></a>
           <h3 class="title"><a href="features.html">Crowdfund <span class="de-em">Your Education</span></a></h3>
           <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
         </li>
-        <li class="span3"> <a href="features.html"><img src="../static/img/features/feature-4.png" alt="Feature 4" /></a>
+        <li class="span3"> <a href="features.html"><img src="{{ STATIC_URL }}img/features/feature-4.png" alt="Feature 4" /></a>
           <h3 class="title"><a href="features.html">Crowd<span class="de-em">fund Someone's Education</span></a></h3>
           <p>Rhoncus adipiscing, magna integer cursus augue eros lacus porttitor magna. Dictumst, odio! Elementum tortor sociis in eu dis dictumst pulvinar lorem nec aliquam a nascetur.</p>
         </li>
@@ -77,183 +77,47 @@
         <!--buttons-->
         <h3 class="title-divider"><span>Featured Blueprints</span></h3>
         <div class="row-fluid pricing-stack">
-          <!--
           {% if featured_campaign_list %}
           {% for campaign in featured_campaign_list %}
           <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="../static/img/team/deniro.jpg" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$5000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>title here</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Career: this is just a placeholder for now what is my project it sounds pretty cool and maybe you should fund me, correction you should definitely fund me</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
+          <div class="well active">
+            <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project12.png" alt="Jimi" /></h3>
+            <p class="price">
+              {% if blueprint.amount_pledged == blueprint.goal %}
+              <span class="term">Funded!<span class="digits"></span></span>
+              {% else %}
+              <span class="term">Funding Goal: <span class="digits">${{ blueprint.goal }}</span></span>
+              {% endif %}
+            </p>
+            <ul class="unstyled points">
+              <li>
+                <h6>{{ blueprint.title }}</h6>
+                <span>by <strong><a href="#">{{ blueprint.account }}</a></strong> (Age {{ blueprint.account.date_of_birth|timesince|default:'N/A'}})</span>
+              </li>
+              <li>
+                <p>{% autoescape off %}{{ blueprint.description|truncatewords:34 }}{% endautoescape %}</p>
+                <span><strong>Location: </strong>Canada</span>
+              </li>
+            </ul>
+            <div class="progress progress-warning progress-striped">
+              <div class="bar" style="width: {{ blueprint.amount_pledged|percentage_of:blueprint.goal|default:'0%' }}"></div>
+            </div>
+            <p class="progress-descriptor hidden-tablet">
+              <span class="pull-left"><em>Raised: </em>${{ blueprint.amount_pledged }}</span>
+              <span class="pull-right">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span><em>Raised: </em>${{ blueprint.amount_pledged}}</span>
+            </p>
+            <p class="progress-descriptor visible-tablet">
+              <span class="">{{ blueprint.end_date|timeuntil }}<em> to go.</em></span>
+            </p>
+            <a href="{% url 'campaign-detail' blueprint.id %}" class="btn btn-primary">Details</a>
+          </div>  
+        </div>
           {% endfor %}
           {% else %}
-        -->
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project3.png" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">1500</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>English for Engineers</h6>
-                  <span>by <strong><a href="#">Rajesh</a></strong> (Age 30)</span>
-                </li>
-                <li>
-                  <p>Looking to brush up on my technical english. Can you imagine learning all that engineering and having to relearn all the words in a different language?</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 30%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$500</span>
-                <span class="pull-right"><em>Days Left: </em>11</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$500</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>11</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project6.png"
-              <p class="price">
-                <span class="term">FUNDED <span class="digits">
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>Casebooks for Ivey</h6>
-                  <span>by <strong><a href="#">Lola</a></strong> (Age 22)</span>
-                </li>
-                <li>
-                  <p>So I am a 4th year exchange student at the Richard Ivey school of Business. These extra textbooks are very expensive and I would love some help</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 100%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$400</span>
-                <span class="pull-right"><em>Days Left: </em>3</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$400</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>3</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project1.png" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$10000</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>Diploma in CS</h6>
-                  <span>by <strong><a href="#">Jimi</a></strong> (Age 28)</span>
-                </li>
-                <li>
-                  <p>After a lifetime of development and programming I would like to formalize some of my education in this new country of mine. Looking to complete the Diploma in Computer Science offered at the University of Western Ontario</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 70%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$7000</span>
-                <span class="pull-right"><em>Days Left: </em>11</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$7000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>11</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <div class="span3">
-            <div class="well active">
-              <h3 class="title"><img src="{{ STATIC_URL }}img/showcase/project11.png" alt="Jimi" /></h3>
-              <p class="price">
-                <span class="term">Funding Goal: <span class="digits">$6500</span></span>
-              </p>
-              <ul class="unstyled points">
-                <li>
-                  <h6>Courses in Styling</h6>
-                  <span>by <strong><a href="#">Rosa</a></strong> (Age 34)</span>
-                </li>
-                <li>
-                  <p>I used to be a hairdresser in my native country of Colombia. However, the styles are very different and I would like to attend some local community college courses to learn how to do "Justin Bieber" hair.</p>
-                  <span><strong>Location: </strong>Canada</span>
-                </li>
-              </ul>
-              <div class="progress progress-warning progress-striped">
-                <div class="bar" style="width: 40%"></div>
-              </div>
-              <p class="progress-descriptor hidden-tablet">
-                <span class="pull-left"><em>Raised: </em>$20000</span>
-                <span class="pull-right"><em>Days Left: </em>71</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span><em>Raised: </em>$2000</span>
-              </p>
-              <p class="progress-descriptor visible-tablet">
-                <span class=""><em>Days Left: </em>71</span>
-              </p>
-
-              <a class="btn btn-primary">Details</a>
-
-            </div>  
-          </div>
-          <!--{% endif %}-->
+          {% endif %}
 
         </div>
       </div>
@@ -264,7 +128,7 @@
       <!-- Plan features -->
       <div class="well well-mini pull-center">
         <h4 class="inline-el pad-right"><span>More Blueprints: </span></h4>
-        <a href="immigrants.html" class="btn btn-primary signup">View All</a>
+        <a href="{% url 'campaign-list' %}" class="btn btn-primary signup">View All</a>
       </div>
     </div>
     

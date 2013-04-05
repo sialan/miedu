@@ -47,9 +47,9 @@
       <div class="header-hidden-inner container">
         <div class="row-fluid">
           <div class="span8">
-            <h3>How it Works</h3>
-            <p>Basically, here is how it works. We can change your life for the better. We will help fund your education and provide you with a meaningful source of income.
-            <a href="{% url 'tutorial' %}" class="btn btn-mini btn-primary">Find out more</a>
+            <h3>How to contribute</h3>
+            <p>So much to do and so few hands to help. MIEDU is an open-source project spearheaded by MIDROID Inc. to make education more accessible. Check us out on <a href="https://github.com/sialan/miedu">Github</a>, send us a pull request. We're also looking for help on internationalization making our materials available for everyone around the globe and editors/curators of our learning materials section. Do you have a special area of expertise? Join us in creating an authoritative platform for education.
+            <a href="{% url 'contact' %}" class="btn btn-mini btn-primary">Find out more</a>
             </p>
           </div>
           <div class="span4"> 
@@ -100,13 +100,13 @@
         {% if user.is_authenticated %}
         <ul class="nav user-menu pull-right">
           <li><a href="#" class="btn btn-primary signup">My Blueprints</a></li>
-          <li class="dropdown"> <a href="#" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">My Account</a>
+          <li class="dropdown"> <a href="{% url 'mi-campaigns' %}" class="btn btn-primary dropdown-toggle login" id="login-drop" data-toggle="dropdown">My Account</a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="login-drop">
               <li role="menuitem"><a href="{% url 'about' %}" tabindex="-1" class="menu-item">My Profile</a></li>
-              <li role="menuitem centered">
+              <li role="menuitem">
                 <form action="{% url 'logout' %}" method="post" class="form-inline" id="login-form-drop" role="menuitem">
                   {% csrf_token %}
-                  <input type="submit" class="menu-item btn btn-primary login logout">
+                  <input type="submit" value="logout" class="menu-item btn btn-primary login logout">
                 </form>
               </li>
             </ul>
@@ -203,13 +203,13 @@
       <!--@todo: replace with company copyright details-->
       <div class="subfooter">
         <div class="span9">
-          <p>Copyright 2013 &copy; TeamTitanic</p>
+          <p>Copyright 2013 &copy; MIDROID Inc.</p>
         </div> <!-- end of span6 -->
         <div class="span3">
           <ul class="inline pull-right">
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="{% url 'terms' %}">Terms</a></li>
+            <li><a href="{% url 'terms' %}#stats">Privacy</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
           </ul>
         </div> <!-- end of span6 -->
       </div> <!-- end of subfooter -->

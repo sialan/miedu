@@ -7,25 +7,10 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
-)
-
-MANAGERS = ADMINS
-
 # Absolute filesystem path to this Django project directory.
 DJANGO_ROOT = dirname(dirname(realpath(__file__)))
-
-# Absolute filesystem path to the top-level project folder.
 PROJECT_ROOT = dirname(DJANGO_ROOT)
-
-# Absolute filesystem path to the whole site folder.
 SITE_ROOT = dirname(PROJECT_ROOT)
-
-# Site name
 SITE_NAME = basename(DJANGO_ROOT)
 
 # Add all necessary filesystem paths to our system path so that we can use
