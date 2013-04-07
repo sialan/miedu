@@ -87,7 +87,7 @@
       <!--main content-->
       <div class="span9">
         <h2 id="content" class="title-divider"><span>The <span class="de-em">Details</span></span> <small>{{ campaign.headline }}</small></h2>
-        <p>{% autoescape off %}{{ campaign.description }}{% endautoescape %}</p>
+        {% autoescape off %}{{ campaign.description }}{% endautoescape %}
 
       <!--summary content-->
         <h2 id="summary" class="title-divider"><span>{{ campaign.endline }}<span class="de-em"></span></span> <small>In 30 seconds or less...</small></h2>
