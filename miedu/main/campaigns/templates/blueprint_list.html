@@ -11,7 +11,7 @@
       
       {% if blueprint_list %}
       {% for blueprint in blueprint_list %}
-      {% if forloop.counter == 1 or forloop.counter0|divisibleby:"4" %}
+      {% if forloop.first or forloop.counter0|divisibleby:"4" %}
       <!--Row 1--> 
       <div class="row-fluid pricing-stack wrapper">
         <div class="span3 item">
@@ -46,7 +46,9 @@
             <a href="{% url 'campaign-detail' blueprint.id %}" class="btn btn-primary">Details</a>
           </div>  
         </div>
+      {% if forloop.last %}
       </div>
+      {% endif %}
       {% else %}
       <div class="span3 item">
         <div class="well active">
@@ -80,7 +82,10 @@
           <a href="{% url 'campaign-detail' blueprint.id %}" class="btn btn-primary">Details</a>
         </div>  
       </div>
+      {% if forloop.last or forloop.counter|divisibleby:"4" %}
+      </div>
       {% endif %}
+
       {% endfor %}
       <div class="pagination pull-center">
         <ul>
@@ -103,7 +108,7 @@
         </ul>
       </div>
       {% else %}
-      {$ endif %}
+      {% endif %}
 
   </div>
 </div>
