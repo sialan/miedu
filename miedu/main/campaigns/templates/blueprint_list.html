@@ -85,7 +85,8 @@
       {% if forloop.last or forloop.counter|divisibleby:"4" %}
       </div>
       {% endif %}
-
+      {% endif %}
+      
       {% endfor %}
       <div class="pagination pull-center">
         <ul>
@@ -108,7 +109,6 @@
         </ul>
       </div>
       {% else %}
-      {% endif %}
       {% endif %}
 
   </div>
